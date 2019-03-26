@@ -1,0 +1,12 @@
+name: 'Varbase API'
+core: 8.x
+type: module
+package: Varbase
+description: 'Varbase API'
+configure: varbase_api.settings
+dependencies:
+  - jsonapi:jsonapi
+  - openapi:openapi
+  - openapi_ui_redoc:openapi_ui_redoc
+  - openapi_ui_swagger:openapi_ui_swagger
+  - simple_oauth:simple_oauth_extras

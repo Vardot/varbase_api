@@ -1,0 +1,49 @@
+{
+    "name": "drupal/varbase_api",
+    "type": "drupal-module",
+    "description": "Varbase API",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+      {
+        "name": "Vardot",
+        "homepage": "https://www.drupal.org/vardot",
+        "role": "Maintainer"
+      }
+    ],
+    "support": {
+      "issues": "https://www.drupal.org/project/issues/varbase_api",
+      "source": "http://cgit.drupalcode.org/varbase_api"
+    },
+    "repositories": {
+      "drupal": {
+        "type": "composer",
+        "url": "https://packages.drupal.org/8"
+        },
+      "assets": {
+        "type": "composer",
+        "url": "https://asset-packagist.org"
+      }
+    },
+    "require": {
+        "cweagans/composer-patches": "^1.6.4",
+        "drupal-composer/drupal-scaffold": "^2.0.0",
+        "drupal/consumers": "^1.9",
+        "drupal/jsonapi": "^2.3",
+        "drupal/openapi": "^1.0-beta2",
+        "drupal/openapi_ui_redoc": "^1.0",
+        "drupal/openapi_ui_swagger": "^1.0",
+        "drupal/simple_oauth": "^3.8.0",
+        "drupal/schema_metatag": "^1.3"
+    },
+    "extra": {
+      "branch-alias": {
+        "dev-8.x-6.x": "8.6.x-dev"
+      },
+      "installer-types": [
+        "bower-asset",
+        "npm-asset"
+      ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

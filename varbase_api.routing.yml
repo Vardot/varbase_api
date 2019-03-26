@@ -1,0 +1,15 @@
+varbase_api.settings:
+  path: '/admin/config/system/varbase/api'
+  defaults:
+    _title: API
+    _form: '\Drupal\varbase_api\Form\SettingsForm'
+  requirements:
+    _permission: 'administer varbase bootstrap paragraphs settings'
+
+varbase_api.generate_keys:
+  path: '/admin/config/system/varbase/api/keys'
+  defaults:
+    _title: Generate keys
+    _form: '\Drupal\varbase_api\Form\OAuthKeyForm'
+  requirements:
+    _permission: 'administer varbase bootstrap paragraphs settings'
