@@ -28,7 +28,6 @@
         "cweagans/composer-patches": "^1.6.4",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "drupal/consumers": "^1.9",
-        "drupal/jsonapi": "^2.3",
         "drupal/openapi": "^1.0-beta2",
         "drupal/openapi_ui_redoc": "^1.0",
         "drupal/openapi_ui_swagger": "^1.0",

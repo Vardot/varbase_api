@@ -5,7 +5,7 @@ package: Varbase
 description: 'Varbase API'
 configure: varbase_api.settings
 dependencies:
-  - jsonapi:jsonapi
+  - drupal:jsonapi
   - openapi:openapi
   - openapi_ui_redoc:openapi_ui_redoc
   - openapi_ui_swagger:openapi_ui_swagger
