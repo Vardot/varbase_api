@@ -32,7 +32,9 @@
         "drupal/openapi_ui_redoc": "^1.0",
         "drupal/openapi_ui_swagger": "^1.0",
         "drupal/simple_oauth": "^3.8.0",
-        "drupal/schema_metatag": "^1.3"
+        "drupal/schema_metatag": "^1.3",
+        "drupal/restui": "^1.17",
+        "drupal/jsonapi_extras": "^3.6"
     },
     "extra": {
       "branch-alias": {
@@ -41,7 +43,13 @@
       "installer-types": [
         "bower-asset",
         "npm-asset"
-      ]
+      ],
+      "patches": {
+        "drupal/openapi": {
+          "Issue #2982692: Not respecting disabled JSON API resources":
+          "https://www.drupal.org/files/issues/2019-05-18/openapi-respect_jsonapi_resources-2982692-10.patch"
+        }
+      }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
