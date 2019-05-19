@@ -5,6 +5,11 @@
  * Contains varbase_api.install.
  */
 
+use Symfony\Component\Yaml\Yaml;
+use Drupal\Core\Config;
+use Drupal\Core\Config\InstallStorage;
+use Drupal\Core\Config\StorageInterface;
+use Drupal\Core\Config\FileStorage;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Url;
 
