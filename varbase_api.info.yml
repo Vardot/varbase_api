@@ -4,6 +4,7 @@ type: module
 package: Varbase
 description: 'Varbase API'
 configure: varbase_api.settings
+project: varbase_api
 dependencies:
   - drupal:jsonapi
   - openapi:openapi
