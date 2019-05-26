@@ -2,7 +2,7 @@ name: 'Varbase API'
 core: 8.x
 type: module
 package: Varbase
-description: 'Varbase API'
+description: 'A JSON:API implementation with authentication and authorization that allows for easy ingestion of content by other applications.'
 configure: varbase_api.settings
 project: varbase_api
 dependencies:

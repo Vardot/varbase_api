@@ -1,7 +1,7 @@
 {
     "name": "drupal/varbase_api",
     "type": "drupal-module",
-    "description": "Varbase API",
+    "description": "A JSON:API implementation with authentication and authorization that allows for easy ingestion of content by other applications.",
     "license": "GPL-2.0-or-later",
     "authors": [
       {
