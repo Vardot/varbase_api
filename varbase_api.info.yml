@@ -6,7 +6,7 @@ description: 'A JSON:API implementation with authentication and authorization th
 configure: varbase_api.settings
 project: varbase_api
 dependencies:
-  - drupal:jsonapi
+  - jsonapi:jsonapi
   - openapi:openapi
   - openapi_ui_redoc:openapi_ui_redoc
   - openapi_ui_swagger:openapi_ui_swagger
