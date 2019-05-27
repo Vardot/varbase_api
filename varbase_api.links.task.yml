@@ -1,6 +1,6 @@
 varbase_api.settings:
   route_name: varbase_api.settings
-  title: 'Settings'
+  title: 'Varbase API settings'
   base_route: varbase_api.settings
 
 varbase_api.generate_keys:
