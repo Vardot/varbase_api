@@ -1,10 +1,11 @@
 name: 'Varbase API'
-core: 8.x
+description: 'A JSON:API implementation with authentication and authorization that allows for easy ingestion of content by other applications.'
 type: module
 package: Varbase
-description: 'A JSON:API implementation with authentication and authorization that allows for easy ingestion of content by other applications.'
-configure: varbase_api.settings
+version: 8.x-7.x-dev
+core: 8.x
 project: varbase_api
+configure: varbase_api.settings
 dependencies:
   - drupal:jsonapi
   - openapi:openapi
