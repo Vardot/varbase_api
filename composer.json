@@ -52,8 +52,8 @@
     "composer-exit-on-patch-failure": true,
     "patches": {
       "drupal/openapi": {
-        "Issue #2982692: Not respecting disabled JSON API resources":
-        "https://www.drupal.org/files/issues/2019-05-18/openapi-respect_jsonapi_resources-2982692-10.patch"
+        "Issue #2982692: Fix issue of respecting disabled JSON:API resources by JSON:API Extras":
+        "https://www.drupal.org/files/issues/2019-06-24/2982692-11.patch"
       }
     }
   }
