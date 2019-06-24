@@ -76,13 +76,14 @@ function varbase_api_install() {
       '/api-docs',
       LanguageInterface::LANGCODE_NOT_SPECIFIED
     );
+
     if (empty($path)) {
       $route_parameters = [
         'openapi_ui' => 'redoc',
         'openapi_generator' => 'jsonapi',
       ];
       $alias_storage->save(
-        Url::fromRoute('openapi.docs', $route_parameters)->toString(),
+        Url::fromRoute('openapi.documentation', $route_parameters)->toString(),
         '/api-docs'
       );
     }
