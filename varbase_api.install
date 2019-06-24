@@ -54,7 +54,7 @@ function varbase_api_install() {
     $config_installer->installOptionalConfig($storage, '');
 
     // Have the .settings.yml configs into the active config.
-    $settings_config_files = file_scan_directory($optional_install_path, '/^.*\\.(settings.yml)$/i');
+    $settings_config_files = file_scan_directory($optional_install_path, '/^.*(settings.yml)$/i');
     if (isset($settings_config_files) && is_array($settings_config_files)) {
       foreach ($settings_config_files as $settings_config_file) {
         $settings_config_file_content = file_get_contents(DRUPAL_ROOT . '/' . $settings_config_file->uri);
@@ -65,7 +65,7 @@ function varbase_api_install() {
     }
   }
   // ---------------------------------------------------------------------------
-  
+
   // If the openapi_ui_redoc and jsonapi modules are installed, give the API
   // documentation a nice path alias.
   if ($module_handler->moduleExists('openapi_ui_redoc') && $module_handler->moduleExists('jsonapi')) {
