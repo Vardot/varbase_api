@@ -54,7 +54,7 @@
     "patches": {
       "drupal/openapi": {
         "Issue #2982692: Fix issue of respecting disabled JSON:API resources by JSON:API Extras":
-        "https://www.drupal.org/files/issues/2019-06-24/2982692-11.patch"
+        "https://www.drupal.org/files/issues/2019-06-24/openapi--8-x-1-0-beta3--2982692-14-no-test.patch"
       }
     }
   }
