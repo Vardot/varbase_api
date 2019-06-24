@@ -111,7 +111,7 @@ function varbase_api_entity_operation(EntityInterface $entity) {
     ];
     $operations['api-documentation'] = [
       'title' => t('View API documentation'),
-      'url' => Url::fromRoute('openapi.docs', $route_parameters, ['fragment' => $fragment]),
+      'url' => Url::fromRoute('openapi.documentation', $route_parameters, ['fragment' => $fragment]),
       'weight' => 51,
     ];
   }
