@@ -20,7 +20,7 @@
     "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
-      },
+    },
     "assets": {
       "type": "composer",
       "url": "https://asset-packagist.org"
@@ -39,7 +39,8 @@
     "drupal/simple_oauth": "~3.0",
     "drupal/schema_metatag": "~1.0",
     "drupal/restui": "~1.0",
-    "drupal/jsonapi_extras": "~3.0"
+    "drupal/jsonapi_extras": "~3.0",
+    "swagger-api/swagger-ui": "~3.0"
   },
   "extra": {
     "branch-alias": {
@@ -49,6 +50,11 @@
       "bower-asset",
       "npm-asset"
     ],
+    "drupal-libraries": {
+      "libraries": [
+        {"name": "swagger-ui", "package": "swagger-api/swagger-ui"}
+      ]
+    },
     "enable-patching": true,
     "composer-exit-on-patch-failure": true,
     "patches": {
