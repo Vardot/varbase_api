@@ -33,7 +33,7 @@
     "drupal/drupal-library-installer-plugin": "^0.3",
     "drupal/consumers": "~1.0",
     "drupal/jsonapi": "~2.0",
-    "drupal/openapi": "1.0-beta3",
+    "drupal/openapi": "1.0-beta4",
     "drupal/openapi_ui_redoc": "~1.0",
     "drupal/openapi_ui_swagger": "~1.0",
     "drupal/simple_oauth": "~3.0",
