@@ -65,11 +65,10 @@ class RequestSubscriber implements EventSubscriberInterface {
     if ($this->routeMatch->getRouteName() == 'oauth2_token.settings' && $this->key->exists() == FALSE) {
       $url = Url::fromRoute('varbase_api.generate_keys');
 
-      drupal_set_message(
+      \Drupal::messenger()->addWarning(
         $this->t('You may wish to <a href=":generate_keys">generate a key pair</a> for OAuth authentication.', [
           ':generate_keys' => $url->toString(),
-        ]),
-        'warning'
+        ])
       );
 
     }
