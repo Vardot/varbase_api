@@ -11,5 +11,6 @@ services:
       - '@current_route_match'
       - '@varbase_api.oauth_key'
       - '@string_translation'
+      - '@messenger'
     tags:
       - { name: event_subscriber }

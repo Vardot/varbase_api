@@ -56,21 +56,8 @@ class RequestSubscriber implements EventSubscriberInterface {
   public function __construct(RouteMatchInterface $route_match, OAuthKey $key, TranslationInterface $translation, MessengerInterface $messenger) {
     $this->routeMatch = $route_match;
     $this->key = $key;
-    $this->setStringTranslation($translation);
+    $this->stringTranslation = $translation;
     $this->messenger = $messenger;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition,
-      $container->get('string_translation'),
-      $container->get('messenger')
-    );
   }
 
   /**
@@ -89,7 +76,7 @@ class RequestSubscriber implements EventSubscriberInterface {
     if ($this->routeMatch->getRouteName() == 'oauth2_token.settings' && $this->key->exists() == FALSE) {
       $url = Url::fromRoute('varbase_api.generate_keys');
 
-      $this->messenger()->addWarning(
+      $this->messenger->addWarning(
         $this->t('You may wish to <a href=":generate_keys">generate a key pair</a> for OAuth authentication.', [
           ':generate_keys' => $url->toString(),
         ])
