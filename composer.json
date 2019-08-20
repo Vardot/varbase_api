@@ -32,7 +32,7 @@
     "cweagans/composer-patches": "~1.0",
     "drupal/drupal-library-installer-plugin": "^0.3",
     "drupal/consumers": "~1.0",
-    "drupal/openapi": "1.0-beta4",
+    "drupal/openapi": "~1.0",
     "drupal/openapi_ui_redoc": "~1.0",
     "drupal/openapi_ui_swagger": "~1.0",
     "drupal/simple_oauth": "~3.0",
@@ -55,12 +55,6 @@
       ]
     },
     "enable-patching": true,
-    "composer-exit-on-patch-failure": true,
-    "patches": {
-      "drupal/openapi": {
-        "Issue #2982692: Fix issue of NOT respecting disabled JSON:API resources by JSON:API Extras":
-        "https://www.drupal.org/files/issues/2019-06-24/2982692-11.patch"
-      }
-    }
+    "composer-exit-on-patch-failure": true
   }
 }
