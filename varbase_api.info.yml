@@ -12,7 +12,6 @@ dependencies:
   - openapi_ui_redoc:openapi_ui_redoc
   - openapi_ui_swagger:openapi_ui_swagger
   - simple_oauth:simple_oauth
-  - simple_oauth:simple_oauth_extras
 install:
   - restui
   - jsonapi_extras
