@@ -36,7 +36,7 @@
     "drupal/openapi": "~1.0",
     "drupal/openapi_ui_redoc": "~1.0",
     "drupal/openapi_ui_swagger": "~1.0",
-    "drupal/simple_oauth": "~3.0",
+    "drupal/simple_oauth": "~4.0",
     "drupal/schema_metatag": "~1.0",
     "drupal/restui": "~1.0",
     "drupal/jsonapi_extras": "~3.0",
