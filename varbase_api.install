@@ -106,35 +106,53 @@ function varbase_api_update_8701() {
 
     // Save changes for modules.
     $core_extension_config_factory->setData($core_extension_data)->save(TRUE);
-    
-    $query = \Drupal::database()->delete('key_value')
-        ->condition('collection', 'system.schema')
-        ->condition('name', 'simple_oauth_extras')
-        ->execute();
-
-    $simple_oauth_extras_config_factory = \Drupal::configFactory()
-      ->getEditable("simple_oauth_extras.settings");
-    $simple_oauth_extras_settings = $simple_oauth_extras_config_factory->getData();
-
-    if (isset($simple_oauth_extras_settings['use_implicit'])) {
-      $simple_oauth_config_factory = \Drupal::configFactory()
-        ->getEditable("simple_oauth.settings");
-
-      $simple_oauth_settings = $simple_oauth_config_factory->getData();
-
-      if (!isset($simple_oauth_settings['use_implicit'])) {
-        $simple_oauth_config_factory->set('use_implicit', $simple_oauth_extras_settings['use_implicit'])->save();
-      }
-
-      $simple_oauth_extras_config_factory->delete();
-    }
-
-    // Entity updates to clear up any mismatched entity and/or field definitions
-    // And Fix changes were detected in the entity type and field definitions.
-    \Drupal::classResolver()
-      ->getInstanceFromDefinition(VarbaseEntityDefinitionUpdateManager::class)
-      ->applyUpdates();
 
   }
+
+  $query = \Drupal::database()->delete('key_value')
+    ->condition('collection', 'system.schema')
+    ->condition('name', 'simple_oauth_extras')
+    ->execute();
+
+  // Entity updates to clear up any mismatched entity and/or field definitions
+  // And Fix changes were detected in the entity type and field definitions.
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(VarbaseEntityDefinitionUpdateManager::class)
+    ->applyUpdates();
 }
 
+/**
+ * Issue #3085671: Fix the update process to uninstall the Simple Oauth Extras
+ * module as it was merged into Simple Oauth to make it work without conditions.
+ */
+function varbase_api_update_8702() {
+
+  $simple_oauth_extras_config_factory = \Drupal::configFactory()
+    ->getEditable("simple_oauth_extras.settings");
+  $simple_oauth_extras_settings = $simple_oauth_extras_config_factory->get();
+
+  if (isset($simple_oauth_extras_settings['use_implicit'])) {
+    $simple_oauth_config_factory = \Drupal::configFactory()
+      ->getEditable("simple_oauth.settings");
+
+    $simple_oauth_settings = $simple_oauth_config_factory->get();
+
+    if (!isset($simple_oauth_settings['use_implicit'])) {
+      $simple_oauth_settings['use_implicit'] = $simple_oauth_extras_settings['use_implicit'];
+      $simple_oauth_config_factory->setData($simple_oauth_settings)->save(TRUE);
+    }
+
+    $simple_oauth_extras_config_factory->delete();
+  }
+
+  $query = \Drupal::database()->delete('key_value')
+    ->condition('collection', 'system.schema')
+    ->condition('name', 'simple_oauth_extras')
+    ->execute();
+
+  // Entity updates to clear up any mismatched entity and/or field definitions
+  // And Fix changes were detected in the entity type and field definitions.
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(VarbaseEntityDefinitionUpdateManager::class)
+    ->applyUpdates();
+}
