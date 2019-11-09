@@ -38,7 +38,7 @@
     "drupal/simple_oauth": "~4.0",
     "drupal/schema_metatag": "~1.0",
     "drupal/restui": "~1.0",
-    "drupal/jsonapi_extras": "~3.0",
+    "drupal/jsonapi_extras": "3.12",
     "swagger-api/swagger-ui": "~3.0"
   },
   "extra": {
@@ -55,6 +55,12 @@
       ]
     },
     "enable-patching": true,
-    "composer-exit-on-patch-failure": true
+    "composer-exit-on-patch-failure": true,
+    "patches": {
+      "drupal/jsonapi_extras": {
+        "Issue #3089444: Compatibility with Drupal 8.8.x":
+        "https://www.drupal.org/files/issues/2019-10-22/jsonapi_extras-compatibility-8.8.x-3089444-2.patch"
+      }
+    }
   }
 }
