@@ -59,7 +59,7 @@
     "patches": {
       "drupal/jsonapi_extras": {
         "Issue #3089444: Compatibility with Drupal 8.8.x":
-        "https://www.drupal.org/files/issues/2019-10-22/jsonapi_extras-compatibility-8.8.x-3089444-2.patch"
+        "https://www.drupal.org/files/issues/2019-11-19/3089444-21.patch"
       }
     }
   }
