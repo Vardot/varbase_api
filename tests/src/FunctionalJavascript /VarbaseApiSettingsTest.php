@@ -2,14 +2,17 @@
 
 namespace Drupal\Tests\varbase_api\FunctionalJavascript;
 
-use Drupal\Tests\BrowserTestBase;
+use Drupal\FunctionalJavascriptTests\WebDriverTestBase;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
  * Tests Varbase API Settings test.
  *
  * @group varbase_api
  */
-class VarbaseApiSettingsTest extends BrowserTestBase {
+class VarbaseApiSettingsTest extends WebDriverTestBase {
+
+  use StringTranslationTrait;
 
   /**
    * {@inheritdoc}
