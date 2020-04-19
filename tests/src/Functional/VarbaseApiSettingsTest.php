@@ -1,8 +1,8 @@
 <?php
 
-namespace Drupal\Tests\varbase_api\FunctionalJavascript;
+namespace Drupal\Tests\varbase_api\Functional;
 
-use Drupal\FunctionalJavascriptTests\WebDriverTestBase;
+use Drupal\Tests\BrowserTestBase;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
@@ -10,7 +10,7 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
  *
  * @group varbase_api
  */
-class VarbaseApiSettingsTest extends WebDriverTestBase {
+class VarbaseApiSettingsTest extends BrowserTestBase {
 
   use StringTranslationTrait;
 
@@ -29,16 +29,6 @@ class VarbaseApiSettingsTest extends WebDriverTestBase {
    */
   protected function setUp() {
     parent::setUp();
-
-    $this->config('varbase_api.settings')
-      ->set('entity_json', TRUE)
-      ->set('bundle_docs', TRUE)
-      ->save();
-
-    $this->drupalCreateContentType(['type' => 'test']);
-    $this->drupalCreateNode(['type' => 'test']);
-
-    $this->container->get('entity_type.bundle.info')->clearCachedBundles();
   }
 
   /**
@@ -65,10 +55,7 @@ class VarbaseApiSettingsTest extends WebDriverTestBase {
     $assert_session->pageTextContains($expose_view_api_doc_text);
 
     $save_config_text = $this->t('Save configuration');
-    $page->clickLink($save_config_text);
-
-    $save_config_message_text = $this->t('The configuration options have been saved');
-    $assert_session->pageTextContains($save_config_message_text);
+    $assert_session->pageTextContains($save_config_text);
 
     // Generate keys.
     $this->drupalGet('/admin/config/system/varbase/api/keys');
@@ -81,31 +68,4 @@ class VarbaseApiSettingsTest extends WebDriverTestBase {
     $assert_session->pageTextContains($destination_text);
 
   }
-
-  /**
-   * Tests API documentation and JSON representations are exposed for entities.
-   */
-  public function testBasicUsage() {
-    $assert_session = $this->assertSession();
-    $page = $this->getSession()->getPage();
-
-    $account = $this->drupalCreateUser([], NULL, TRUE);
-    $this->drupalLogin($account);
-
-    $this->drupalGet('/admin/content');
-    $page->clickLink('View JSON');
-    $assert_session->statusCodeEquals(200);
-
-    $this->drupalGet('/admin/structure/types');
-    $this->clickLink('View JSON');
-    $assert_session->statusCodeEquals(200);
-
-    $this->drupalGet('/api-docs');
-    $assert_session->statusCodeEquals(200);
-
-    $this->drupalGet('/admin/structure/types');
-    $this->clickLink('View API documentation');
-    $assert_session->statusCodeEquals(200);
-  }
-
 }
