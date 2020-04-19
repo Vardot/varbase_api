@@ -41,7 +41,6 @@ class VarbaseApiSettingsTest extends BrowserTestBase {
 
     // Varbase API settings.
     $this->drupalGet('/admin/config/system/varbase/api');
-    $assert_session->waitForElementVisible('css', '.varbase-api-settings-form');
 
     $varbase_api_settings_text = $this->t('Varbase API settings');
     $assert_session->pageTextContains($varbase_api_settings_text);
@@ -54,7 +53,6 @@ class VarbaseApiSettingsTest extends BrowserTestBase {
 
     // Generate keys.
     $this->drupalGet('/admin/config/system/varbase/api/keys');
-    $assert_session->waitForElementVisible('css', '.oauth-key-form');
 
     $generate_keys_text = $this->t('Generate keys');
     $assert_session->pageTextContains($generate_keys_text);
