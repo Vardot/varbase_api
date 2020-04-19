@@ -29,6 +29,8 @@ class VarbaseApiSettingsTest extends BrowserTestBase {
    */
   protected function setUp() {
     parent::setUp();
+
+    $this->drupalLogin($this->rootUser);
   }
 
   /**
@@ -36,10 +38,6 @@ class VarbaseApiSettingsTest extends BrowserTestBase {
    */
   public function testCheckVarbaseApiSettings() {
     $assert_session = $this->assertSession();
-    $page = $this->getSession()->getPage();
-
-    $account = $this->drupalCreateUser([], NULL, TRUE);
-    $this->drupalLogin($account);
 
     // Varbase API settings.
     $this->drupalGet('/admin/config/system/varbase/api');
@@ -54,9 +52,6 @@ class VarbaseApiSettingsTest extends BrowserTestBase {
     $expose_view_api_doc_text = $this->t('Expose a "View API Documentation" link in bundle entity operations');
     $assert_session->pageTextContains($expose_view_api_doc_text);
 
-    $save_config_text = $this->t('Save configuration');
-    $assert_session->pageTextContains($save_config_text);
-
     // Generate keys.
     $this->drupalGet('/admin/config/system/varbase/api/keys');
     $assert_session->waitForElementVisible('css', '.oauth-key-form');
@@ -68,4 +63,5 @@ class VarbaseApiSettingsTest extends BrowserTestBase {
     $assert_session->pageTextContains($destination_text);
 
   }
+
 }
