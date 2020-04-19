@@ -13,5 +13,5 @@ build:
       run_tests.functional:
         types: 'PHPUnit-Functional'
         testgroups: 'varbase_api'
-        suppress-deprecations: false
+        suppress-deprecations: true
         halt-on-fail: false
