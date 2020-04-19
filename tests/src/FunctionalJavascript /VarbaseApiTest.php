@@ -2,11 +2,12 @@
 
 namespace Drupal\Tests\varbase_api\FunctionalJavascript;
 
+use Drupal\FunctionalJavascriptTests\WebDriverTestBase;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Component\Serialization\Json;
 use Drupal\consumers\Entity\Consumer;
 use Drupal\Core\Url;
 use Drupal\taxonomy\Entity\Vocabulary;
-use Drupal\Tests\BrowserTestBase;
 use GuzzleHttp\Exception\ClientException;
 use Psr\Http\Message\ResponseInterface;
 
@@ -14,10 +15,10 @@ use Psr\Http\Message\ResponseInterface;
  * Tests that OAuth and JSON:API authenticate and authorize entity operations.
  *
  * @group varbase_api
- * @group headless
- * @group orca_public
  */
-class ApiTest extends BrowserTestBase {
+class VarbaseApiTest extends WebDriverTestBase {
+
+  use StringTranslationTrait;
 
   /**
    * {@inheritdoc}
