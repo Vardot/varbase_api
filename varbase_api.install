@@ -162,3 +162,25 @@ function varbase_api_update_8702() {
       ->applyUpdates();
   }
 }
+
+/**
+ * Issue #3151781: Add [OpenAPI for JSON:API] module ( ~2.0 ).
+ *
+ * After OpenAPI had been updated to ~2.0.
+ */
+function varbase_api_update_8703() {
+  if (!\Drupal::moduleHandler()->moduleExists('openapi_jsonapi')) {
+    \Drupal::service('module_installer')->install(['openapi_jsonapi'], FALSE);
+  }
+}
+
+/**
+ * Issue #3151784: Add [OpenAPI for REST] module ( ~2.0 ).
+ *
+ * After OpenAPI had been updated to ~2.0.
+ */
+function varbase_api_update_8704() {
+  if (!\Drupal::moduleHandler()->moduleExists('openapi_rest')) {
+    \Drupal::service('module_installer')->install(['openapi_rest'], FALSE);
+  }
+}
