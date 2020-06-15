@@ -7,6 +7,7 @@ core_version_requirement: ^8 || ^9
 dependencies:
   - drupal:jsonapi
   - openapi:openapi
+  - openapi_jsonapi:openapi_jsonapi
   - openapi_ui_redoc:openapi_ui_redoc
   - openapi_ui_swagger:openapi_ui_swagger
   - simple_oauth:simple_oauth

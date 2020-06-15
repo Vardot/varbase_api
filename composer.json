@@ -36,6 +36,7 @@
     "drupal/core": "^8.8 || ^9 || ~10.0.0",
     "drupal/consumers": "~1.0",
     "drupal/openapi": "~2.0",
+    "drupal/openapi_jsonapi": "~2.0",
     "drupal/openapi_ui_redoc": "~1.0",
     "drupal/openapi_ui_swagger": "~1.0",
     "drupal/simple_oauth": "~4.0",
