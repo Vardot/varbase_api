@@ -68,22 +68,21 @@ function varbase_api_install() {
   // If the openapi_ui_redoc and jsonapi modules are installed, give the API
   // documentation a nice path alias.
   if ($module_handler->moduleExists('openapi_ui_redoc') && $module_handler->moduleExists('jsonapi')) {
-    $alias_storage = \Drupal::entityTypeManager()->getStorage('path_alias');
 
-    $path = $alias_storage->lookupPathSource(
-      '/api-docs',
-      LanguageInterface::LANGCODE_NOT_SPECIFIED
-    );
+    $alias_manager = \Drupal::service('path_alias.manager');
+    $path = $alias_manager->getPathByAlias($path);
 
     if (empty($path)) {
       $route_parameters = [
         'openapi_ui' => 'redoc',
         'openapi_generator' => 'jsonapi',
       ];
-      $alias_storage->save(
-        Url::fromRoute('openapi.documentation', $route_parameters)->toString(),
-        '/api-docs'
-      );
+      $path_alias = \Drupal::entityTypeManager()->getStorage('path_alias')->create([
+        'path' => Url::fromRoute('openapi.documentation', $route_parameters)->toString(),
+        'alias' => '/api-docs',
+        'langcode' => LanguageInterface::LANGCODE_NOT_SPECIFIED,
+      ]);
+      $path_alias->save();
     }
   }
 }
