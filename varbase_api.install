@@ -68,8 +68,7 @@ function varbase_api_install() {
   // If the openapi_ui_redoc and jsonapi modules are installed, give the API
   // documentation a nice path alias.
   if ($module_handler->moduleExists('openapi_ui_redoc') && $module_handler->moduleExists('jsonapi')) {
-    /** @var \Drupal\Core\Path\AliasStorageInterface $alias_storage */
-    $alias_storage = \Drupal::service('path.alias_storage');
+    $alias_storage = \Drupal::entityTypeManager()->getStorage('path_alias');
 
     $path = $alias_storage->lookupPathSource(
       '/api-docs',
