@@ -42,7 +42,12 @@
     "drupal/simple_oauth": "~4.0",
     "drupal/schema_metatag": "~2.0",
     "drupal/restui": "~1.0",
-    "drupal/jsonapi_extras": "~3.0"
+    "drupal/jsonapi_extras": "~3.0",
+    "drupal/jsonapi_include": "^1.4",
+    "drupal/jsonapi_image_styles": "^2.0@beta",
+    "drupal/jsonapi_resources": "^1.0@beta",
+    "drupal/jsonapi_views": "1.x-dev",
+    "drupal/jsonapi_search_api": "^1.0@RC"
   },
   "suggest": {
     "swagger-api/swagger-ui": "~3.0: Provides the Swagger UI library which is a collection of HTML, Javascript, and CSS assets that dynamically generate beautiful documentation from a Swagger-compliant API."
@@ -61,6 +66,28 @@
       ]
     },
     "enable-patching": true,
-    "composer-exit-on-patch-failure": true
+    "composer-exit-on-patch-failure": true,
+    "patchLevel": {
+       "drupal/core": "-p2"
+    },
+    "patches": {
+      "drupal/openapi_jsonapi": {
+        "Issue #3185778 TypeError: Cannot read property 'anyOf' of undefined": "https://www.drupal.org/files/issues/2020-12-21/add_required_keyword_8.x_2.x-3185778-5.patch",
+        "Issue #3079209 Only show enabled endpoints for JSON:API": "https://www.drupal.org/files/issues/2020-12-21/only_add_read_route-methods_when_read_only_is_enabled_in_jsonapi_8.x_2.x-3079209-11.patch"
+      },
+      "drupal/jsonapi_include": {
+        "Issue #3172870: Consider make it compatible with JSON:API Resources": "https://www.drupal.org/files/issues/2020-09-24/jsonapi_resources-3172870-2.patch",
+        "Issue #3131167: Infinite recursion for nested include": "https://www.drupal.org/files/issues/2020-10-28/infinite_recursion_for_nested_include-3131167-6.patch"
+      },
+      "drupal/jsonapi_resources": {
+        "Issue #3172884: Include parameter doesn't work with different type of entities": "https://www.drupal.org/files/issues/2020-09-24/fix-include-3172884-2.patch"
+      },
+      "drupal/jsonapi_views": {
+        "Issue #3115484: Allow arguments": "https://www.drupal.org/files/issues/2020-12-28/json_api-views_arguemnts-3115484-4.patch"
+      },
+      "drupal/restui": {
+        "Issue #3185372 Undeclared variable error messages appearing on config page": "https://www.drupal.org/files/issues/2020-11-29/restui-3185372-4.patch"
+      }
+    }
   }
 }

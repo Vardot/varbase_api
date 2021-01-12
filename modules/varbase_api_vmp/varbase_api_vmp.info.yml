@@ -1,0 +1,7 @@
+name: Varbase mobile pages
+type: module
+description: 'Provides VarbaseMobilePages entity.'
+package: varbase
+core: 8.x
+dependencies:
+  - varbase_api

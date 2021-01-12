@@ -1,0 +1,8 @@
+services:
+  varbase_api_vmp.response:
+    class: Drupal\varbase_api_vmp\EventSubscriber\ResponseSubscriber
+    arguments: []
+    tags:
+      - { name: event_subscriber }
+    calls:
+      - [setRouteMatch, ['@current_route_match']]

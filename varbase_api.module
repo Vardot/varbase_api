@@ -10,6 +10,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\views\ViewEntityInterface;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
+use DOMDocument as DOM;
 
 /**
  * Implements hook_entity_insert().
@@ -131,4 +132,47 @@ function varbase_api_form_oauth2_token_settings_alter(array &$form, FormStateInt
   // the link to that form and users can continue to use the one provided by
   // Varbase API.
   $form['actions']['generate']['keys']['#access'] = FALSE;
+}
+
+/**
+ * Implements hook_entity_presave().
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ */
+function varbase_api_node_presave($entity) {
+  if ($entity->hasField('field_embedded_media') || $entity->hasField('field_embedded_entities')) {
+    $data = $entity->body->getvalue()[0];
+    $dom = new DOM();
+    libxml_use_internal_errors(TRUE);
+    $dom->loadHTML(mb_convert_encoding($data['value'], 'HTML-ENTITIES', 'UTF-8'));
+    libxml_clear_errors();
+
+    if ($entity->hasField('field_embedded_media')) {
+      $medias = $dom->getElementsByTagName('drupal-media');
+      $values = [];
+
+      foreach ($medias as $media) {
+        if($uuid = $media->getAttribute('data-entity-uuid')) {
+          $media_entity = \Drupal::service('entity.repository')->loadEntityByUuid('media', $uuid);
+          $values[] = $media_entity->id();
+        }
+      }
+
+      $entity->set('field_embedded_media', $values);
+    }
+
+    if ($entity->hasField('field_embedded_entities')) {
+      $entities = $dom->getElementsByTagName('drupal-entity');
+      $values = [];
+
+      foreach ($entities as $drupal_entity) {
+        if($uuid = $drupal_entity->getAttribute('data-entity-uuid')) {
+          $node_entity = \Drupal::service('entity.repository')->loadEntityByUuid('node', $uuid);
+          $values[] = $node_entity->id();
+        }
+      }
+
+      $entity->set('field_embedded_entities', $values);
+    }
+  }
 }

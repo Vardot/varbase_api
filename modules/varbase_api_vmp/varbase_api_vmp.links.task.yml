@@ -1,0 +1,15 @@
+varbase_api_vmp.view:
+  route_name: entity.varbase_api_vmp.canonical
+  base_route: entity.varbase_api_vmp.canonical
+  title: View
+
+varbase_api_vmp.page_edit:
+  route_name: entity.varbase_api_vmp.edit_form
+  base_route: entity.varbase_api_vmp.canonical
+  title: Edit
+
+varbase_api_vmp.delete_confirm:
+  route_name:  entity.varbase_api_vmp.delete_form
+  base_route:  entity.varbase_api_vmp.canonical
+  title: Delete
+  weight: 10
