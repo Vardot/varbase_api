@@ -142,6 +142,11 @@ function varbase_api_form_oauth2_token_settings_alter(array &$form, FormStateInt
 function varbase_api_node_presave($entity) {
   if ($entity->hasField('field_embedded_media') || $entity->hasField('field_embedded_entities')) {
     $data = $entity->body->getvalue()[0];
+
+    if (empty($data['value'])) {
+      return;
+    }
+
     $dom = new DOM();
     libxml_use_internal_errors(TRUE);
     $dom->loadHTML(mb_convert_encoding($data['value'], 'HTML-ENTITIES', 'UTF-8'));

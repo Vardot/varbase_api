@@ -87,6 +87,9 @@
       },
       "drupal/restui": {
         "Issue #3185372 Undeclared variable error messages appearing on config page": "https://www.drupal.org/files/issues/2020-11-29/restui-3185372-4.patch"
+      },
+      "drupal/jsonapi_extras": {
+        "Issue #3169654 Default sorting": "https://www.drupal.org/files/issues/2020-09-17/jsonapi_extras-default-sorting-3169654-6.patch"
       }
     }
   }
