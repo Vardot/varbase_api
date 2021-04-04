@@ -16,3 +16,6 @@ install:
   - restui
   - jsonapi_extras
   - jsonapi_defaults
+  - jsonapi_include
+  - jsonapi_image_styles
+  - jsonapi_views

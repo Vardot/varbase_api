@@ -1,0 +1,69 @@
+entity.varbase_api_vmp.canonical:
+  path: '/admin/structure/vmp/{varbase_api_vmp}'
+  defaults:
+    _entity_view: 'varbase_api_vmp'
+    _title: 'Varbase mobile pages content'
+  requirements:
+    _entity_access: 'varbase_api_vmp.view'
+  options:
+    _admin_route: TRUE
+
+entity.varbase_api_vmp.collection:
+  path: '/admin/structure/vmp/list'
+  defaults:
+    _entity_list: 'varbase_api_vmp'
+    _title: 'Varbase mobile pages List'
+  requirements:
+    _permission: 'administer varbase mobile pages entity'
+  options:
+    _admin_route: TRUE
+
+varbase_api_vmp.varbase_api_vmp_add:
+  path: '/admin/structure/vmp/add'
+  defaults:
+    _entity_form: varbase_api_vmp.add
+    _title: 'Add varbase mobile pages'
+  requirements:
+    _entity_create_access: 'varbase_api_vmp'
+  options:
+    _admin_route: TRUE
+
+entity.varbase_api_vmp.edit_form:
+  path: '/admin/structure/vmp/{varbase_api_vmp}/edit'
+  defaults:
+    _entity_form: varbase_api_vmp.edit
+    _title: 'Edit varbase mobile pages'
+  requirements:
+    _entity_access: 'varbase_api_vmp.edit'
+  options:
+    _admin_route: TRUE
+
+entity.varbase_api_vmp.delete_form:
+  path: '/admin/structure/vmp/{varbase_api_vmp}/delete'
+  defaults:
+    _entity_form: varbase_api_vmp.delete
+    _title: 'Delete varbase mobile pages'
+  requirements:
+    _entity_access: 'varbase_api_vmp.delete'
+  options:
+    _admin_route: TRUE
+
+entity.varbase_api_vmp.vmp_pages:
+  path: '/%jsonapi%/vmp/{id}'
+  methods: GET
+  requirements:
+    _access: 'TRUE'
+    _content_type_format: api_json
+    _format: api_json
+  defaults:
+    _jsonapi_resource: Drupal\varbase_api_vmp\Resource\VmpResource
+    resource_type: 'varbase_api_vmp--varbase_api_vmp'
+    _is_jsonapi: true
+    _jsonapi_resource_types:
+      - node--article
+      - node--in_pictures
+      - node--live_coverage
+      - node--podcast
+      - node--program
+      - node--show
+      - node--video

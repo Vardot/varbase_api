@@ -1,0 +1,6 @@
+entity.varbase_api_vmp.collection:
+  title: 'Varbase mobile pages Listing'
+  route_name: entity.varbase_api_vmp.collection
+  description: 'List varbase mobile pages'
+  parent: system.admin_structure
+  weight: 10

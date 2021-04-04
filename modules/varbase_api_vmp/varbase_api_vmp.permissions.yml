@@ -1,0 +1,11 @@
+view varbase mobile pages entity:
+  title: 'View varbase mobile pages entity'
+add varbase mobile pages entity:
+  title: 'Add varbase mobile pages entity'
+edit varbase mobile pages entity:
+  title: 'Edit varbase mobile pages Entity'
+delete varbase mobile pages entity:
+  title: 'Delete varbase mobile pages entity'
+administer varbase mobile pages entity:
+  title: 'Administer varbase mobile pages entity'
+  restrict access: TRUE

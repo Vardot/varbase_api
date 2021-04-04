@@ -1,0 +1,6 @@
+varbase_api_vmp.varbase_api_vmp_add:
+  route_name: varbase_api_vmp.varbase_api_vmp_add
+  title: 'Add varbase mobile pages'
+  appears_on:
+    - entity.varbase_api_vmp.collection
+    - entity.varbase_api_vmp.canonical
