@@ -140,7 +140,11 @@ function varbase_api_form_oauth2_token_settings_alter(array &$form, FormStateInt
  * @param \Drupal\Core\Entity\EntityInterface $entity
  */
 function varbase_api_node_presave($entity) {
-  if ($entity->hasField('field_embedded_media') || $entity->hasField('field_embedded_entities')) {
+  if ($entity->hasField('field_embedded_media') || $entity->hasField('field_embedded_entities') && !empty($entity->body->getvalue())) {
+    if (!isset($entity->body->getvalue()[0])) {
+      return;
+    }
+
     $data = $entity->body->getvalue()[0];
 
     if (empty($data['value'])) {
@@ -173,7 +177,9 @@ function varbase_api_node_presave($entity) {
       foreach ($entities as $drupal_entity) {
         if($uuid = $drupal_entity->getAttribute('data-entity-uuid')) {
           $node_entity = \Drupal::service('entity.repository')->loadEntityByUuid('node', $uuid);
-          $values[] = $node_entity->id();
+          if (!is_null($node_entity)) {
+            $values[] = $node_entity->id();
+          }
         }
       }
 
