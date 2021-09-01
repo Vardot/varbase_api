@@ -1,7 +1,7 @@
 uuid: ce248968-0bf3-45a4-b3e5-19c5c9022e91
 langcode: en
 status: true
-dependencies: {  }
+dependencies: {}
 id: jsonapi_resource_config--jsonapi_resource_config
 disabled: true
 path: jsonapi_resource_config/jsonapi_resource_config
@@ -11,23 +11,23 @@ resourceFields:
     fieldName: id
     publicName: id
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   type:
     fieldName: type
     publicName: type
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   uuid:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   _core:
     fieldName: _core
     publicName: _core
     enhancer:
-      id: ''
+      id: ""
     disabled: false

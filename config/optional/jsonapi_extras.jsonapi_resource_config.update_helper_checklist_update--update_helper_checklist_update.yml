@@ -13,35 +13,35 @@ resourceFields:
     fieldName: id
     publicName: id
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   uuid:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   successful_by_hook:
     fieldName: successful_by_hook
     publicName: successful_by_hook
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   langcode:
     fieldName: langcode
     publicName: langcode
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   created:
     fieldName: created
     publicName: created
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   changed:
     fieldName: changed
     publicName: changed
     enhancer:
-      id: ''
+      id: ""
     disabled: false

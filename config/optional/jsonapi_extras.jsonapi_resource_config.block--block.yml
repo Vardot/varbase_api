@@ -13,83 +13,83 @@ resourceFields:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   langcode:
     fieldName: langcode
     publicName: langcode
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   status:
     fieldName: status
     publicName: status
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   dependencies:
     fieldName: dependencies
     publicName: dependencies
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   third_party_settings:
     fieldName: third_party_settings
     publicName: third_party_settings
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   _core:
     fieldName: _core
     publicName: _core
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   id:
     fieldName: id
     publicName: id
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   theme:
     fieldName: theme
     publicName: theme
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   region:
     fieldName: region
     publicName: region
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   weight:
     fieldName: weight
     publicName: weight
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   provider:
     fieldName: provider
     publicName: provider
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   plugin:
     fieldName: plugin
     publicName: plugin
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   settings:
     fieldName: settings
     publicName: settings
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   visibility:
     fieldName: visibility
     publicName: visibility
     enhancer:
-      id: ''
+      id: ""
     disabled: false

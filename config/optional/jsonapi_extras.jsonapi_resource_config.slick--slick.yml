@@ -13,89 +13,89 @@ resourceFields:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   langcode:
     fieldName: langcode
     publicName: langcode
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   status:
     fieldName: status
     publicName: status
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   dependencies:
     fieldName: dependencies
     publicName: dependencies
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   third_party_settings:
     fieldName: third_party_settings
     publicName: third_party_settings
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   _core:
     fieldName: _core
     publicName: _core
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   id:
     fieldName: id
     publicName: id
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   name:
     fieldName: name
     publicName: name
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   label:
     fieldName: label
     publicName: label
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   weight:
     fieldName: weight
     publicName: weight
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   group:
     fieldName: group
     publicName: group
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   skin:
     fieldName: skin
     publicName: skin
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   breakpoints:
     fieldName: breakpoints
     publicName: breakpoints
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   optimized:
     fieldName: optimized
     publicName: optimized
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   options:
     fieldName: options
     publicName: options
     enhancer:
-      id: ''
+      id: ""
     disabled: false
