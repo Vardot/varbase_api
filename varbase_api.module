@@ -10,6 +10,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\views\ViewEntityInterface;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
+use Drupal\jsonapi_extras\Entity\JsonapiResourceConfig;
 
 /**
  * Implements hook_entity_insert().
@@ -131,4 +132,38 @@ function varbase_api_form_oauth2_token_settings_alter(array &$form, FormStateInt
   // the link to that form and users can continue to use the one provided by
   // Varbase API.
   $form['actions']['generate']['keys']['#access'] = FALSE;
+}
+
+/**
+ * Implements hook_entity_bundle_create().
+ */
+function varbase_api_entity_bundle_create($entity_type_id, $bundle) {
+  $auto_enabled_entity_types = (array) \Drupal::config('varbase_api.settings')->get('auto_enabled_entity_types');
+
+  if (isset($auto_enabled_entity_types)
+    && !in_array($entity_type_id, $auto_enabled_entity_types)) {
+
+    // Get the JSON:API resource type.
+    $resource_config_id = sprintf('%s--%s', $entity_type_id, $bundle);
+    $existing_entity = \Drupal::service('jsonapi.resource_type.repository')->getByTypeName($resource_config_id);
+
+    if (isset($existing_entity)) {
+
+      JsonapiResourceConfig::create([
+        'id' => $resource_config_id,
+        'disabled' => FALSE,
+        'path' => $entity_type_id . '/' . $bundle,
+        'resourceType' => $resource_config_id,
+        'resourceFields' => [],
+      ])->save();
+
+      $config_factory = \Drupal::configFactory()->getEditable('jsonapi_extras.jsonapi_resource_config.' . $resource_config_id);
+
+      if (isset($config_factory)) {
+        $config_factory->set('disabled', TRUE)->save();
+        \Drupal::service('jsonapi.resource_type.repository')->reset();
+        \Drupal::logger('varbase_api')->info('Disabled JSON:API Endpoint for Entity Type: @entity_type_id Bundle: @bundle', ['@entity_type_id' => $entity_type_id, '@bundle' => $bundle]);
+      }
+    }
+  }
 }

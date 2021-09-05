@@ -11,7 +11,7 @@ use Drupal\varbase_api\OAuthKey;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * OAuthKeyForm Class Doc Comment.
+ * OAuth Key Form for Varbase API.
  *
  * @category Class
  * @package Varbase

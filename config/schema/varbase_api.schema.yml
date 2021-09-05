@@ -8,3 +8,9 @@ varbase_api.settings:
     bundle_docs:
       type: boolean
       label: 'Expose "View API Documentation" link in bundle entity operations'
+    auto_enabled_entity_types:
+      type: sequence
+      label: "Auto Enabled JSON:API Endpoints for Entity Types"
+      sequence:
+        - type: string
+          label: "Entity type machine name"

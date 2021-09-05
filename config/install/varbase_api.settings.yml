@@ -1,2 +1,6 @@
 entity_json: true
 bundle_docs: true
+auto_enabled_entity_types:
+  - media_type
+  - node_type
+  - taxonomy_vocabulary

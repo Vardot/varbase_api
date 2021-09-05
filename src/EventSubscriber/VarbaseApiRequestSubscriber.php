@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\varbase_api;
+namespace Drupal\varbase_api\EventSubscriber;
 
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
@@ -9,14 +9,15 @@ use Drupal\Core\Url;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\varbase_api\OAuthKey;
 
 /**
- * RequestSubscriber Class Doc Comment.
+ * Request Subscriber for Varbase API.
  *
  * @category Class
- * @package Varbase
+ * @package Varbase API
  */
-class RequestSubscriber implements EventSubscriberInterface {
+class VarbaseApiRequestSubscriber implements EventSubscriberInterface {
 
   use StringTranslationTrait;
 

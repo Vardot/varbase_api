@@ -1,6 +1,7 @@
 # Varbase API
 
-A JSON:API implementation with authentication and authorization that allows for easy ingestion of content by other applications.
+A JSON:API implementation with authentication and authorization that allows
+ for easy ingestion of content by other applications.
 
 Can be installed in the extra components installation step with Varbase.
 
@@ -10,7 +11,8 @@ Can be installed in the extra components installation step with Varbase.
 ## Use With [Varbase](https://www.drupal.org/project/varbase) Distribution:
 This module is best used with [Varbase](https://www.drupal.org/project/varbase) distribution.
 
-Varbase Layout Builder can be installed with any Drupal 8/9 site. Even if installed with the Minimal or Standard profile.
+Varbase Layout Builder can be installed with any Drupal 8/9 site.
+ Even if installed with the Minimal or Standard profile.
 However, using it with [Varbase](https://www.drupal.org/project/varbase) gives you way much more cool stuff!
 
 ## [Varbase documentation](https://docs.varbase.vardot.com/dev-docs/understanding-varbase/optional-components/varbase-api)
