@@ -11,4 +11,4 @@ id: entity_embed_fake_entity--entity_embed_fake_entity
 disabled: true
 path: entity_embed_fake_entity/entity_embed_fake_entity
 resourceType: entity_embed_fake_entity--entity_embed_fake_entity
-resourceFields: ""
+resourceFields: ''

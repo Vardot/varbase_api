@@ -12,29 +12,29 @@ resourceFields:
     fieldName: id
     publicName: id
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   type:
     fieldName: type
     publicName: type
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   server_id:
     fieldName: server_id
     publicName: server_id
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   index_id:
     fieldName: index_id
     publicName: index_id
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   data:
     fieldName: data
     publicName: data
     enhancer:
-      id: ""
+      id: ''
     disabled: false

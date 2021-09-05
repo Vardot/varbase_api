@@ -2,9 +2,13 @@ langcode: en
 status: true
 dependencies:
   module:
+    - jsonapi_defaults
     - node
+third_party_settings:
+  jsonapi_defaults:
+    page_limit: 50
 id: node_type--node_type
-disabled: true
+disabled: false
 path: node_type/node_type
 resourceType: node_type--node_type
 resourceFields:
@@ -12,77 +16,77 @@ resourceFields:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   langcode:
     fieldName: langcode
     publicName: langcode
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   status:
     fieldName: status
     publicName: status
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   dependencies:
     fieldName: dependencies
     publicName: dependencies
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   third_party_settings:
     fieldName: third_party_settings
     publicName: third_party_settings
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   _core:
     fieldName: _core
     publicName: _core
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   name:
     fieldName: name
     publicName: name
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   type:
     fieldName: type
     publicName: type
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   description:
     fieldName: description
     publicName: description
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   help:
     fieldName: help
     publicName: help
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   new_revision:
     fieldName: new_revision
     publicName: new_revision
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   preview_mode:
     fieldName: preview_mode
     publicName: preview_mode
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   display_submitted:
     fieldName: display_submitted
     publicName: display_submitted
     enhancer:
-      id: ""
+      id: ''
     disabled: false

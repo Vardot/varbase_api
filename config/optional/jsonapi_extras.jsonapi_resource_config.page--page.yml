@@ -2,7 +2,11 @@ langcode: en
 status: true
 dependencies:
   module:
+    - jsonapi_defaults
     - page_manager
+third_party_settings:
+  jsonapi_defaults:
+    page_limit: 50
 id: page--page
 disabled: true
 path: page/page
@@ -12,83 +16,83 @@ resourceFields:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   langcode:
     fieldName: langcode
     publicName: langcode
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   status:
     fieldName: status
     publicName: status
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   dependencies:
     fieldName: dependencies
     publicName: dependencies
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   third_party_settings:
     fieldName: third_party_settings
     publicName: third_party_settings
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   _core:
     fieldName: _core
     publicName: _core
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   id:
     fieldName: id
     publicName: id
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   label:
     fieldName: label
     publicName: label
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   description:
     fieldName: description
     publicName: description
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   use_admin_theme:
     fieldName: use_admin_theme
     publicName: use_admin_theme
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   path:
     fieldName: path
     publicName: path
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   access_logic:
     fieldName: access_logic
     publicName: access_logic
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   access_conditions:
     fieldName: access_conditions
     publicName: access_conditions
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   parameters:
     fieldName: parameters
     publicName: parameters
     enhancer:
-      id: ""
+      id: ''
     disabled: false

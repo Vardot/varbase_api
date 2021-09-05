@@ -12,101 +12,101 @@ resourceFields:
     fieldName: id
     publicName: id
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   uuid:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   revision_id:
     fieldName: revision_id
     publicName: revision_id
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   langcode:
     fieldName: langcode
     publicName: langcode
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   type:
     fieldName: type
     publicName: type
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   revision_created:
     fieldName: revision_created
     publicName: revision_created
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   revision_user:
     fieldName: revision_user
     publicName: revision_user
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   revision_log:
     fieldName: revision_log
     publicName: revision_log
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   status:
     fieldName: status
     publicName: status
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   info:
     fieldName: info
     publicName: info
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   changed:
     fieldName: changed
     publicName: changed
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   reusable:
     fieldName: reusable
     publicName: reusable
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   default_langcode:
     fieldName: default_langcode
     publicName: default_langcode
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   revision_default:
     fieldName: revision_default
     publicName: revision_default
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   revision_translation_affected:
     fieldName: revision_translation_affected
     publicName: revision_translation_affected
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   metatag:
     fieldName: metatag
     publicName: metatag
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   body:
     fieldName: body
     publicName: body
     enhancer:
-      id: ""
+      id: ''
     disabled: false

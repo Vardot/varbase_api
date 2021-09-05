@@ -16,53 +16,53 @@ resourceFields:
     fieldName: id
     publicName: id
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   uuid:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   user_id:
     fieldName: user_id
     publicName: user_id
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   plugin_id:
     fieldName: plugin_id
     publicName: plugin_id
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   provider_user_id:
     fieldName: provider_user_id
     publicName: provider_user_id
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   token:
     fieldName: token
     publicName: token
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   additional_data:
     fieldName: additional_data
     publicName: additional_data
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   created:
     fieldName: created
     publicName: created
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   changed:
     fieldName: changed
     publicName: changed
     enhancer:
-      id: ""
+      id: ''
     disabled: false

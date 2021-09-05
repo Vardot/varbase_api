@@ -12,89 +12,89 @@ resourceFields:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   langcode:
     fieldName: langcode
     publicName: langcode
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   status:
     fieldName: status
     publicName: status
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   dependencies:
     fieldName: dependencies
     publicName: dependencies
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   third_party_settings:
     fieldName: third_party_settings
     publicName: third_party_settings
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   _core:
     fieldName: _core
     publicName: _core
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   id:
     fieldName: id
     publicName: id
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   label:
     fieldName: label
     publicName: label
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   variant:
     fieldName: variant
     publicName: variant
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   variant_settings:
     fieldName: variant_settings
     publicName: variant_settings
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   page:
     fieldName: page
     publicName: page
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   weight:
     fieldName: weight
     publicName: weight
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   selection_criteria:
     fieldName: selection_criteria
     publicName: selection_criteria
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   selection_logic:
     fieldName: selection_logic
     publicName: selection_logic
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   static_context:
     fieldName: static_context
     publicName: static_context
     enhancer:
-      id: ""
+      id: ''
     disabled: false

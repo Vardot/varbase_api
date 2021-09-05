@@ -16,137 +16,137 @@ resourceFields:
     fieldName: id
     publicName: id
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   uuid:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   revision_id:
     fieldName: revision_id
     publicName: revision_id
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   langcode:
     fieldName: langcode
     publicName: langcode
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   bundle:
     fieldName: bundle
     publicName: bundle
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   revision_created:
     fieldName: revision_created
     publicName: revision_created
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   revision_user:
     fieldName: revision_user
     publicName: revision_user
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   revision_log_message:
     fieldName: revision_log_message
     publicName: revision_log_message
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   enabled:
     fieldName: enabled
     publicName: enabled
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   title:
     fieldName: title
     publicName: title
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   description:
     fieldName: description
     publicName: description
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   menu_name:
     fieldName: menu_name
     publicName: menu_name
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   link:
     fieldName: link
     publicName: link
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   external:
     fieldName: external
     publicName: external
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   rediscover:
     fieldName: rediscover
     publicName: rediscover
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   weight:
     fieldName: weight
     publicName: weight
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   expanded:
     fieldName: expanded
     publicName: expanded
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   parent:
     fieldName: parent
     publicName: parent
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   changed:
     fieldName: changed
     publicName: changed
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   default_langcode:
     fieldName: default_langcode
     publicName: default_langcode
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   revision_default:
     fieldName: revision_default
     publicName: revision_default
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   revision_translation_affected:
     fieldName: revision_translation_affected
     publicName: revision_translation_affected
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   metatag:
     fieldName: metatag
     publicName: metatag
     enhancer:
-      id: ""
+      id: ''
     disabled: false

@@ -16,125 +16,125 @@ resourceFields:
     fieldName: uid
     publicName: uid
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   uuid:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   langcode:
     fieldName: langcode
     publicName: langcode
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   preferred_langcode:
     fieldName: preferred_langcode
     publicName: preferred_langcode
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   preferred_admin_langcode:
     fieldName: preferred_admin_langcode
     publicName: preferred_admin_langcode
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   name:
     fieldName: name
     publicName: name
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   pass:
     fieldName: pass
     publicName: pass
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   mail:
     fieldName: mail
     publicName: mail
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   timezone:
     fieldName: timezone
     publicName: timezone
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   status:
     fieldName: status
     publicName: status
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   created:
     fieldName: created
     publicName: created
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   changed:
     fieldName: changed
     publicName: changed
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   access:
     fieldName: access
     publicName: access
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   login:
     fieldName: login
     publicName: login
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   init:
     fieldName: init
     publicName: init
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   roles:
     fieldName: roles
     publicName: roles
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   default_langcode:
     fieldName: default_langcode
     publicName: default_langcode
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   metatag:
     fieldName: metatag
     publicName: metatag
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   field_last_password_reset:
     fieldName: field_last_password_reset
     publicName: field_last_password_reset
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   field_password_expiration:
     fieldName: field_password_expiration
     publicName: field_password_expiration
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   user_picture:
     fieldName: user_picture
     publicName: user_picture
     enhancer:
-      id: ""
+      id: ''
     disabled: false

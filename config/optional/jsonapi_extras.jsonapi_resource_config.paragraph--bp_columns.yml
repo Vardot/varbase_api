@@ -12,131 +12,131 @@ resourceFields:
     fieldName: id
     publicName: id
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   uuid:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   revision_id:
     fieldName: revision_id
     publicName: revision_id
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   langcode:
     fieldName: langcode
     publicName: langcode
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   type:
     fieldName: type
     publicName: type
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   status:
     fieldName: status
     publicName: status
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   created:
     fieldName: created
     publicName: created
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   parent_id:
     fieldName: parent_id
     publicName: parent_id
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   parent_type:
     fieldName: parent_type
     publicName: parent_type
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   parent_field_name:
     fieldName: parent_field_name
     publicName: parent_field_name
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   behavior_settings:
     fieldName: behavior_settings
     publicName: behavior_settings
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   default_langcode:
     fieldName: default_langcode
     publicName: default_langcode
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   revision_default:
     fieldName: revision_default
     publicName: revision_default
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   revision_translation_affected:
     fieldName: revision_translation_affected
     publicName: revision_translation_affected
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   bp_background:
     fieldName: bp_background
     publicName: bp_background
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   bp_classes:
     fieldName: bp_classes
     publicName: bp_classes
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   bp_column_content:
     fieldName: bp_column_content
     publicName: bp_column_content
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   bp_gutter:
     fieldName: bp_gutter
     publicName: bp_gutter
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   bp_image_field:
     fieldName: bp_image_field
     publicName: bp_image_field
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   bp_title:
     fieldName: bp_title
     publicName: bp_title
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   bp_title_status:
     fieldName: bp_title_status
     publicName: bp_title_status
     enhancer:
-      id: ""
+      id: ''
     disabled: false
   bp_width:
     fieldName: bp_width
     publicName: bp_width
     enhancer:
-      id: ""
+      id: ''
     disabled: false
