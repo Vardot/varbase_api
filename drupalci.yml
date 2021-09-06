@@ -2,9 +2,6 @@ build:
   assessment:
     validate_codebase:
       phplint: {  }
-      container_composer:
-        options: ' install --prefer-dist --no-suggest --no-progress --no-interaction'
-        halt-on-fail: true
       csslint:
         halt-on-fail: false
       eslint:
@@ -27,15 +24,14 @@ build:
           - composer require cweagans/composer-patches:~1.0
           - composer config extra.enable-patching true
           - composer config extra.composer-exit-on-patch-failure true
+          - composer require --dev phpspec/prophecy-phpunit:*
+          - composer require phpunit/phpunit:~9.0 --with-all-dependencies
           - composer config --json extra.installer-types '["npm-asset", "bower-asset"]'
           - composer config --json extra.installer-paths.web\/libraries\/\{\$name\} '["type:drupal-library", "type:bower-asset", "type:npm-asset"]'
           - composer config --json extra.installer-paths.web\/libraries\/swagger-ui\/dist '["npm-asset/swagger-ui-dist"]'
           - rm composer.lock
           - composer require npm-asset/swagger-ui-dist:~3.0
-          - composer require --dev phpspec/prophecy-phpunit:*
-          - composer require phpunit/phpunit:~9.0 --with-all-dependencies
       run_tests.javascript:
-        concurrency: 15
         types: 'PHPUnit-FunctionalJavascript'
         testgroups: "varbase_api"
         suppress-deprecations: true
