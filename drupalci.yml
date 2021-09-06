@@ -14,6 +14,7 @@ build:
           - composer config --json extra.installer-types '["npm-asset", "bower-asset"]'
           - composer config --json extra.installer-paths.web\/libraries\/\{\$name\} '["type:drupal-library", "type:bower-asset", "type:npm-asset"]'
           - composer config --json extra.installer-paths.web\/libraries\/swagger-ui\/dist '["npm-asset/swagger-ui-dist"]'
+          - rm composer.lock
           - composer require npm-asset/swagger-ui-dist:~3.0
       phplint:
         halt-on-fail: false

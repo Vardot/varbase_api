@@ -38,7 +38,7 @@ class VarbaseApiSettingsTest extends WebDriverTestBase {
   ];
 
   /**
-   * Setup.
+   * {@inheritdoc}
    */
   protected function setUp(): void {
     parent::setUp();
