@@ -4,8 +4,8 @@ build:
       container_command:
         commands:
           - cd ${SOURCE_DIR}
-          - config repositories.asset composer https://asset-packagist.org
-          - require oomphinc/composer-installers-extender:~2.0
+          - composer config repositories.asset composer https://asset-packagist.org
+          - composer require oomphinc/composer-installers-extender:~2.0
           - composer require cweagans/composer-patches:~1.0
           - composer config extra.enable-patching true
           - composer config extra.composer-exit-on-patch-failure true
