@@ -1,6 +1,22 @@
 build:
   assessment:
     validate_codebase:
+      phplint: {  }
+      container_composer:
+        options: ' install --prefer-dist --no-suggest --no-progress --no-interaction'
+        halt-on-fail: true
+      csslint:
+        halt-on-fail: false
+      eslint:
+        # A test must pass eslinting standards check in order to continue processing.
+        halt-on-fail: false
+      phpcs:
+        # phpcs will use core's specified version of Coder.
+        sniff-all-files: false
+        halt-on-fail: false
+      phpstan:
+        halt-on-fail: false
+    testing:
       container_command:
         commands:
           - cd ${SOURCE_DIR}
@@ -16,9 +32,9 @@ build:
           - composer config --json extra.installer-paths.web\/libraries\/swagger-ui\/dist '["npm-asset/swagger-ui-dist"]'
           - rm composer.lock
           - composer require npm-asset/swagger-ui-dist:~3.0
-    testing:
       run_tests.javascript:
-        types: "PHPUnit-FunctionalJavascript"
+        concurrency: 15
+        types: 'PHPUnit-FunctionalJavascript'
         testgroups: "varbase_api"
         suppress-deprecations: true
         halt-on-fail: false
