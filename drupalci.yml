@@ -4,16 +4,17 @@ build:
       container_command:
         commands:
           - cd ${SOURCE_DIR}
-          - sudo -u www-data composer config repositories.assets composer https://asset-packagist.org
-          - sudo -u www-data composer require oomphinc/composer-installers-extender:~2.0
-          - sudo -u www-data composer require cweagans/composer-patches:~1.0
-          - sudo -u www-data composer config extra.enable-patching true
-          - sudo -u www-data composer config extra.composer-exit-on-patch-failure true
-          - sudo -u www-data composer config --json extra.installer-types '["npm-asset", "bower-asset"]'
-          - sudo -u www-data composer config --json extra.installer-paths.web\/libraries\/\{\$name\} '["type:drupal-library", "type:bower-asset", "type:npm-asset"]'
-          - sudo -u www-data composer config --json extra.installer-paths.web\/libraries\/swagger-ui\/dist '["npm-asset/swagger-ui-dist"]'
-          - rm composer.lock
-          - sudo -u www-data composer require npm-asset/swagger-ui-dist:~3.0
+          - composer config repositories.drupal composer https://packages.drupal.org/8
+          - composer config --unset repositories.0
+          - composer config repositories.assets composer https://asset-packagist.org
+          - composer require oomphinc/composer-installers-extender:~2.0
+          - composer require cweagans/composer-patches:~1.0
+          - composer config extra.enable-patching true
+          - composer config extra.composer-exit-on-patch-failure true
+          - composer config --json extra.installer-types '["npm-asset", "bower-asset"]'
+          - composer config --json extra.installer-paths.web\/libraries\/\{\$name\} '["type:drupal-library", "type:bower-asset", "type:npm-asset"]'
+          - composer config --json extra.installer-paths.web\/libraries\/swagger-ui\/dist '["npm-asset/swagger-ui-dist"]'
+          - composer require npm-asset/swagger-ui-dist:~3.0
       phplint:
         halt-on-fail: false
       csslint:
@@ -25,7 +26,6 @@ build:
         halt-on-fail: false
     testing:
       run_tests.javascript:
-        concurrency: 15
         types: "PHPUnit-FunctionalJavascript"
         testgroups: "varbase_api"
         suppress-deprecations: true
