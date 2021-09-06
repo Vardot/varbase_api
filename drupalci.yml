@@ -1,19 +1,6 @@
 build:
   assessment:
     validate_codebase:
-      phplint: {  }
-      csslint:
-        halt-on-fail: false
-      eslint:
-        # A test must pass eslinting standards check in order to continue processing.
-        halt-on-fail: false
-      phpcs:
-        # phpcs will use core's specified version of Coder.
-        sniff-all-files: false
-        halt-on-fail: false
-      phpstan:
-        halt-on-fail: false
-    testing:
       container_command:
         commands:
           - cd ${SOURCE_DIR}
@@ -32,6 +19,24 @@ build:
           - composer config --json extra.installer-paths.web\/libraries\/\{\$name\} '["type:drupal-library", "type:bower-asset", "type:npm-asset"]'
           - rm composer.lock
           - composer require npm-asset/swagger-ui-dist:~3.0
+      phplint: {  }
+      csslint:
+        halt-on-fail: false
+      eslint:
+        # A test must pass eslinting standards check in order to continue processing.
+        halt-on-fail: false
+      phpcs:
+        # phpcs will use core's specified version of Coder.
+        sniff-all-files: false
+        halt-on-fail: false
+      phpstan:
+        halt-on-fail: false
+    testing:
+      container_command:
+        commands:
+          - cd ${SOURCE_DIR}
+          - rm composer.lock
+          - composer install -vvv
       run_tests.javascript:
         types: 'PHPUnit-FunctionalJavascript'
         testgroups: "varbase_api"
