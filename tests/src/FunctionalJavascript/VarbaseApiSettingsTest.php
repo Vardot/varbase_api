@@ -27,8 +27,19 @@ class VarbaseApiSettingsTest extends WebDriverTestBase {
   /**
    * {@inheritdoc}
    */
-  protected static $modules = ['varbase_api', 'node', 'taxonomy', 'media', 'user', 'block', 'block_content'];
+  protected static $modules = [
+    'varbase_api',
+    'node',
+    'taxonomy',
+    'media',
+    'user',
+    'block',
+    'block_content',
+  ];
 
+  /**
+   * Setup.
+   */
   protected function setUp(): void {
     parent::setUp();
     $this->container->get('theme_installer')->install(['claro']);
@@ -89,7 +100,6 @@ class VarbaseApiSettingsTest extends WebDriverTestBase {
    * Check Varbase API Auto Enabled JSON:API Endpoints for Entity Types.
    */
   public function testCheckVarbaseApiAutoEnabledJsonApiEndpoints() {
-    $assert_session = $this->assertSession();
 
     $this->drupalGet('/admin/config/system/varbase/api');
 

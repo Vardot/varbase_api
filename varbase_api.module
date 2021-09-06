@@ -162,7 +162,11 @@ function varbase_api_entity_bundle_create($entity_type_id, $bundle) {
       if (isset($config_factory)) {
         $config_factory->set('disabled', TRUE)->save();
         \Drupal::service('jsonapi.resource_type.repository')->reset();
-        \Drupal::logger('varbase_api')->info('Disabled JSON:API Endpoint for Entity Type: @entity_type_id Bundle: @bundle', ['@entity_type_id' => $entity_type_id, '@bundle' => $bundle]);
+        $logger_values = [
+          '@entity_type_id' => $entity_type_id,
+          '@bundle' => $bundle,
+        ];
+        \Drupal::logger('varbase_api')->info('Disabled JSON:API Endpoint for Entity Type: @entity_type_id Bundle: @bundle', $logger_values);
       }
     }
   }
