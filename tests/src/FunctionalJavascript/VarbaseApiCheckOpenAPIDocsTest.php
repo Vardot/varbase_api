@@ -51,7 +51,7 @@ class VarbaseApiCheckOpenAPIDocsTest extends WebDriverTestBase {
 
     $page = $this->getSession()->getPage();
 
-    $page->waitFor(10, function () use ($page) {
+    $page->waitFor(20, function () use ($page) {
       return $page->find('css', "section.models.is-open");
     });
 

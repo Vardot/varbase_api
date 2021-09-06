@@ -4,16 +4,16 @@ build:
       container_command:
         commands:
           - cd ${SOURCE_DIR}
-          - composer config repositories.asset composer https://asset-packagist.org
-          - composer require oomphinc/composer-installers-extender:~2.0
-          - composer require cweagans/composer-patches:~1.0
-          - composer config extra.enable-patching true
-          - composer config extra.composer-exit-on-patch-failure true
-          - composer config extra.installer-types.0 "npm-asset"
-          - composer config extra.installer-types.1 "bower-asset"
-          - composer config extra.installer-paths.web\/libraries\/\{\$name\} ["type:drupal-library","type:bower-asset","type:npm-asset"]
-          - composer config extra.installer-paths.web\/libraries\/swagger-ui\/dist ["npm-asset/swagger-ui-dist"]
-          - composer require npm-asset/swagger-ui-dist:~3.0
+          - sudo -u www-data composer config repositories.asset composer https://asset-packagist.org
+          - sudo -u www-data composer require oomphinc/composer-installers-extender:~2.0
+          - sudo -u www-data composer require cweagans/composer-patches:~1.0
+          - sudo -u www-data composer config extra.enable-patching true
+          - sudo -u www-data composer config extra.composer-exit-on-patch-failure true
+          - sudo -u www-data composer config extra.installer-types.0 "npm-asset"
+          - sudo -u www-data composer config extra.installer-types.1 "bower-asset"
+          - sudo -u www-data composer config extra.installer-paths.web\/libraries\/\{\$name\} ["type:drupal-library","type:bower-asset","type:npm-asset"]
+          - sudo -u www-data composer config extra.installer-paths.web\/libraries\/swagger-ui\/dist ["npm-asset/swagger-ui-dist"]
+          - sudo -u www-data composer require npm-asset/swagger-ui-dist:~3.0
       phplint:
         halt-on-fail: false
       csslint:
