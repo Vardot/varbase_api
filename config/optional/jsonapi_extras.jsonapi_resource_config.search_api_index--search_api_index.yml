@@ -12,95 +12,95 @@ resourceFields:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   langcode:
     fieldName: langcode
     publicName: langcode
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   status:
     fieldName: status
     publicName: status
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   dependencies:
     fieldName: dependencies
     publicName: dependencies
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   third_party_settings:
     fieldName: third_party_settings
     publicName: third_party_settings
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   _core:
     fieldName: _core
     publicName: _core
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   id:
     fieldName: id
     publicName: id
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   name:
     fieldName: name
     publicName: name
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   description:
     fieldName: description
     publicName: description
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   read_only:
     fieldName: read_only
     publicName: read_only
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   field_settings:
     fieldName: field_settings
     publicName: field_settings
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   datasource_settings:
     fieldName: datasource_settings
     publicName: datasource_settings
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   processor_settings:
     fieldName: processor_settings
     publicName: processor_settings
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   tracker_settings:
     fieldName: tracker_settings
     publicName: tracker_settings
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   options:
     fieldName: options
     publicName: options
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   server:
     fieldName: server
     publicName: server
     enhancer:
-      id: ''
+      id: ""
     disabled: false

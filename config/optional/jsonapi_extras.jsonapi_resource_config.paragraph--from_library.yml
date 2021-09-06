@@ -7,4 +7,4 @@ id: paragraph--from_library
 disabled: true
 path: paragraph/from_library
 resourceType: paragraph--from_library
-resourceFields: {  }
+resourceFields: {}

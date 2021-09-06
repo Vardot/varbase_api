@@ -1,8 +1,8 @@
 <?php
 
-namespace Drupal\Tests\varbase_api\Functional;
+namespace Drupal\Tests\varbase_api\FunctionalJavascript;
 
-use Drupal\Tests\BrowserTestBase;
+use Drupal\FunctionalJavascriptTests\WebDriverTestBase;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
@@ -10,24 +10,29 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
  *
  * @group varbase_api
  */
-class VarbaseApiSettingsTest extends BrowserTestBase {
+class VarbaseApiSettingsTest extends WebDriverTestBase {
 
   use StringTranslationTrait;
 
   /**
    * {@inheritdoc}
    */
-  protected $defaultTheme = 'stark';
+  protected $profile = 'standard';
 
   /**
    * {@inheritdoc}
    */
-  protected static $modules = ['varbase_api'];
+  protected $defaultTheme = 'olivero';
+
+  /**
+   * {@inheritdoc}
+   */
+  protected static $modules = ['varbase_api', 'node', 'taxonomy', 'media', 'user', 'block', 'block_content'];
 
   protected function setUp(): void {
     parent::setUp();
     $this->container->get('theme_installer')->install(['claro']);
-    $this->config('system.theme')->set('default', 'claro')->save();
+    $this->config('system.theme')->set('admin', 'claro')->save();
 
     $this->drupalLogin($this->rootUser);
   }
@@ -41,27 +46,25 @@ class VarbaseApiSettingsTest extends BrowserTestBase {
     // Varbase API settings.
     $this->drupalGet('/admin/config/system/varbase/api');
 
+    $page = $this->getSession()->getPage();
+
     $varbase_api_settings_text = $this->t('Varbase API settings');
     $assert_session->pageTextContains($varbase_api_settings_text);
 
     $expose_view_json_text = $this->t('Expose a "View JSON" link in entity operations');
     $assert_session->pageTextContains($expose_view_json_text);
+    $entity_json = $page->findField('entity_json');
+    $this->assertNotEmpty($entity_json);
+    $this->assertTrue($entity_json->isChecked());
 
     $expose_view_api_doc_text = $this->t('Expose a "View API Documentation" link in bundle entity operations');
     $assert_session->pageTextContains($expose_view_api_doc_text);
-
-    // Generate keys.
-    $this->drupalGet('/admin/config/system/varbase/api/keys');
-
-    $generate_keys_text = $this->t('Generate keys');
-    $assert_session->pageTextContains($generate_keys_text);
-
-    $destination_text = $this->t('Destination');
-    $assert_session->pageTextContains($destination_text);
+    $bundle_docs = $page->findField('bundle_docs');
+    $this->assertNotEmpty($bundle_docs);
+    $this->assertTrue($bundle_docs->isChecked());
 
     $auto_enable = $this->t('Auto Enabled JSON:API Endpoints for Entity Types');
-
-    $assert_session->pageTextContains($destination_text);
+    $assert_session->pageTextContains($auto_enable);
 
   }
 
@@ -80,10 +83,6 @@ class VarbaseApiSettingsTest extends BrowserTestBase {
     $destination_text = $this->t('Destination');
     $assert_session->pageTextContains($destination_text);
 
-    $auto_enable = $this->t('Auto Enabled JSON:API Endpoints for Entity Types');
-
-    $assert_session->pageTextContains($destination_text);
-
   }
 
   /**
@@ -91,40 +90,60 @@ class VarbaseApiSettingsTest extends BrowserTestBase {
    */
   public function testCheckVarbaseApiAutoEnabledJsonApiEndpoints() {
     $assert_session = $this->assertSession();
-    $auto_enable = $this->t('Auto Enabled JSON:API Endpoints for Entity Types');
-    $assert_session->pageTextContains($auto_enable);
+
+    $this->drupalGet('/admin/config/system/varbase/api');
 
     $page = $this->getSession()->getPage();
 
-    // Content type.
+    // Content type is auto enabled.
     $auto_enabled_entity_types_node_type = $page->findField('auto_enabled_entity_types[node_type]');
     $this->assertNotEmpty($auto_enabled_entity_types_node_type);
     $this->assertTrue($auto_enabled_entity_types_node_type->isChecked());
 
-    // Content.
+    // Content is auto enabled.
     $auto_enabled_entity_types_node = $page->findField('auto_enabled_entity_types[node]');
     $this->assertNotEmpty($auto_enabled_entity_types_node);
     $this->assertTrue($auto_enabled_entity_types_node->isChecked());
 
-    // Taxonomy vocabulary.
+    // Taxonomy vocabulary is auto enabled.
     $auto_enabled_entity_types_taxonomy_vocabulary = $page->findField('auto_enabled_entity_types[taxonomy_vocabulary]');
     $this->assertNotEmpty($auto_enabled_entity_types_taxonomy_vocabulary);
     $this->assertTrue($auto_enabled_entity_types_taxonomy_vocabulary->isChecked());
 
-    // Taxonomy term.
+    // Taxonomy term is auto enabled.
     $auto_enabled_entity_types_taxonomy_term = $page->findField('auto_enabled_entity_types[taxonomy_term]');
     $this->assertNotEmpty($auto_enabled_entity_types_taxonomy_term);
     $this->assertTrue($auto_enabled_entity_types_taxonomy_term->isChecked());
 
-    // Media type.
+    // Media type is auto enabled.
     $auto_enabled_entity_types_media_type = $page->findField('auto_enabled_entity_types[media_type]');
     $this->assertNotEmpty($auto_enabled_entity_types_media_type);
     $this->assertTrue($auto_enabled_entity_types_media_type->isChecked());
 
-    // Media.
+    // Media is auto enabled.
     $auto_enabled_entity_types_media = $page->findField('auto_enabled_entity_types[media]');
     $this->assertNotEmpty($auto_enabled_entity_types_media);
     $this->assertTrue($auto_enabled_entity_types_media->isChecked());
+
+    // User is disabled.
+    $auto_enabled_entity_types_user = $page->findField('auto_enabled_entity_types[user]');
+    $this->assertNotEmpty($auto_enabled_entity_types_user);
+    $this->assertFalse($auto_enabled_entity_types_user->isChecked());
+
+    // Block is disabled.
+    $auto_enabled_entity_types_block = $page->findField('auto_enabled_entity_types[block]');
+    $this->assertNotEmpty($auto_enabled_entity_types_block);
+    $this->assertFalse($auto_enabled_entity_types_block->isChecked());
+
+    // Custom block type is disabled.
+    $auto_enabled_entity_types_block_content_type = $page->findField('auto_enabled_entity_types[block_content_type]');
+    $this->assertNotEmpty($auto_enabled_entity_types_block_content_type);
+    $this->assertFalse($auto_enabled_entity_types_block_content_type->isChecked());
+
+    // Custom block is disabled.
+    $auto_enabled_entity_types_block_content = $page->findField('auto_enabled_entity_types[block_content]');
+    $this->assertNotEmpty($auto_enabled_entity_types_block_content);
+    $this->assertFalse($auto_enabled_entity_types_block_content->isChecked());
 
   }
 

@@ -12,89 +12,89 @@ resourceFields:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   langcode:
     fieldName: langcode
     publicName: langcode
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   status:
     fieldName: status
     publicName: status
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   dependencies:
     fieldName: dependencies
     publicName: dependencies
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   third_party_settings:
     fieldName: third_party_settings
     publicName: third_party_settings
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   _core:
     fieldName: _core
     publicName: _core
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   name:
     fieldName: name
     publicName: name
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   label:
     fieldName: label
     publicName: label
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   display:
     fieldName: display
     publicName: display
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   display_configuration:
     fieldName: display_configuration
     publicName: display_configuration
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   selection_display:
     fieldName: selection_display
     publicName: selection_display
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   selection_display_configuration:
     fieldName: selection_display_configuration
     publicName: selection_display_configuration
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   widget_selector:
     fieldName: widget_selector
     publicName: widget_selector
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   widget_selector_configuration:
     fieldName: widget_selector_configuration
     publicName: widget_selector_configuration
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   widgets:
     fieldName: widgets
     publicName: widgets
     enhancer:
-      id: ''
+      id: ""
     disabled: false

@@ -16,47 +16,47 @@ resourceFields:
     fieldName: id
     publicName: id
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   uuid:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   revision_id:
     fieldName: revision_id
     publicName: revision_id
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   langcode:
     fieldName: langcode
     publicName: langcode
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   path:
     fieldName: path
     publicName: path
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   alias:
     fieldName: alias
     publicName: alias
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   status:
     fieldName: status
     publicName: status
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   revision_default:
     fieldName: revision_default
     publicName: revision_default
     enhancer:
-      id: ''
+      id: ""
     disabled: false

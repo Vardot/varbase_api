@@ -17,119 +17,119 @@ resourceFields:
     fieldName: serial
     publicName: serial
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   sid:
     fieldName: sid
     publicName: sid
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   uuid:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   token:
     fieldName: token
     publicName: token
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   uri:
     fieldName: uri
     publicName: uri
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   created:
     fieldName: created
     publicName: created
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   completed:
     fieldName: completed
     publicName: completed
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   changed:
     fieldName: changed
     publicName: changed
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   in_draft:
     fieldName: in_draft
     publicName: in_draft
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   current_page:
     fieldName: current_page
     publicName: current_page
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   remote_addr:
     fieldName: remote_addr
     publicName: remote_addr
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   uid:
     fieldName: uid
     publicName: uid
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   langcode:
     fieldName: langcode
     publicName: langcode
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   webform_id:
     fieldName: webform_id
     publicName: webform_id
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   entity_type:
     fieldName: entity_type
     publicName: entity_type
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   entity_id:
     fieldName: entity_id
     publicName: entity_id
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   locked:
     fieldName: locked
     publicName: locked
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   sticky:
     fieldName: sticky
     publicName: sticky
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   notes:
     fieldName: notes
     publicName: notes
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   metatag:
     fieldName: metatag
     publicName: metatag
     enhancer:
-      id: ''
+      id: ""
     disabled: false

@@ -1,6 +1,19 @@
 build:
   assessment:
     validate_codebase:
+      container_command:
+        commands:
+          - cd ${SOURCE_DIR}
+          - config repositories.asset composer https://asset-packagist.org
+          - require oomphinc/composer-installers-extender:~2.0
+          - composer require cweagans/composer-patches:~1.0
+          - composer config extra.enable-patching true
+          - composer config extra.composer-exit-on-patch-failure true
+          - composer config extra.installer-types.0 "npm-asset"
+          - composer config extra.installer-types.1 "bower-asset"
+          - composer config extra.installer-paths.web\/libraries\/\{\$name\} ["type:drupal-library","type:bower-asset","type:npm-asset"]
+          - composer config extra.installer-paths.web\/libraries\/swagger-ui\/dist ["npm-asset/swagger-ui-dist"]
+          - composer require npm-asset/swagger-ui-dist:~3.0
       phplint:
         halt-on-fail: false
       csslint:
@@ -11,8 +24,9 @@ build:
         sniff-all-files: false
         halt-on-fail: false
     testing:
-      run_tests.functional:
-        types: "PHPUnit-Functional"
+      run_tests.javascript:
+        concurrency: 15
+        types: "PHPUnit-FunctionalJavascript"
         testgroups: "varbase_api"
         suppress-deprecations: true
         halt-on-fail: false

@@ -1,8 +1,8 @@
 <?php
 
-namespace Drupal\Tests\varbase_api\Functional;
+namespace Drupal\Tests\varbase_api\FunctionalJavascript;
 
-use Drupal\Tests\BrowserTestBase;
+use Drupal\FunctionalJavascriptTests\WebDriverTestBase;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
@@ -10,19 +10,24 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
  *
  * @group varbase_api
  */
-class VarbaseApiCheckOpenAPIDocsTest extends BrowserTestBase {
+class VarbaseApiCheckOpenAPIDocsTest extends WebDriverTestBase {
 
   use StringTranslationTrait;
 
   /**
    * {@inheritdoc}
    */
-  protected $defaultTheme = 'stark';
+  protected $profile = 'standard';
 
   /**
    * {@inheritdoc}
    */
-  protected static $modules = ['varbase_api', 'node', 'taxonomy', 'media'];
+  protected $defaultTheme = 'olivero';
+
+  /**
+   * {@inheritdoc}
+   */
+  protected static $modules = ['varbase_api', 'node', 'taxonomy', 'media', 'user', 'block', 'block_content'];
 
   /**
    * {@inheritdoc}
@@ -30,7 +35,7 @@ class VarbaseApiCheckOpenAPIDocsTest extends BrowserTestBase {
   protected function setUp(): void {
     parent::setUp();
     $this->container->get('theme_installer')->install(['claro']);
-    $this->config('system.theme')->set('default', 'claro')->save();
+    $this->config('system.theme')->set('admin', 'claro')->save();
 
     $this->drupalLogin($this->rootUser);
   }
@@ -44,6 +49,12 @@ class VarbaseApiCheckOpenAPIDocsTest extends BrowserTestBase {
     // OpenAPI Documentation
     $this->drupalGet('/admin/config/services/openapi/swagger/jsonapi');
 
+    $page = $this->getSession()->getPage();
+
+    $page->waitFor(10, function () use ($page) {
+      return $page->find('css', "section.models.is-open");
+    });
+
     $openapi_doc_text = $this->t('OpenAPI Documentation');
     $assert_session->pageTextContains($openapi_doc_text);
 
@@ -52,7 +63,7 @@ class VarbaseApiCheckOpenAPIDocsTest extends BrowserTestBase {
     $assert_session->pageTextContains($content_type_text);
 
     // Content.
-    $content_text = $this->t('Content -');
+    $content_text = $this->t('Content - Basic page');
     $assert_session->pageTextContains($content_text);
 
     // Taxonomy vocabulary.
@@ -60,16 +71,28 @@ class VarbaseApiCheckOpenAPIDocsTest extends BrowserTestBase {
     $assert_session->pageTextContains($taxonomy_vocabulary_text);
 
     // Taxonomy term.
-    $taxonomy_term_text = $this->t('Taxonomy term');
+    $taxonomy_term_text = $this->t('Taxonomy term - Tags');
     $assert_session->pageTextContains($taxonomy_term_text);
 
     // Media type.
     $media_type_text = $this->t('Media type');
     $assert_session->pageTextContains($media_type_text);
 
-    // Media.
-    $media_text = $this->t('Media -');
-    $assert_session->pageTextContains($media_text);
+    // Media - Image.
+    $media_image_text = $this->t('Media - Image');
+    $assert_session->pageTextContains($media_image_text);
+
+    // Media - Video.
+    $media_video_text = $this->t('Media - Video');
+    $assert_session->pageTextContains($media_video_text);
+
+    // Media - Remote video.
+    $media_remote_video_text = $this->t('Media - Remote video');
+    $assert_session->pageTextContains($media_remote_video_text);
+
+    // Media - Audio.
+    $media_audio_text = $this->t('Media - Audio');
+    $assert_session->pageTextContains($media_audio_text);
 
   }
 

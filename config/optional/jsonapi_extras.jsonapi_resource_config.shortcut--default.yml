@@ -12,53 +12,53 @@ resourceFields:
     fieldName: id
     publicName: id
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   uuid:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   langcode:
     fieldName: langcode
     publicName: langcode
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   shortcut_set:
     fieldName: shortcut_set
     publicName: shortcut_set
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   title:
     fieldName: title
     publicName: title
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   weight:
     fieldName: weight
     publicName: weight
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   link:
     fieldName: link
     publicName: link
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   default_langcode:
     fieldName: default_langcode
     publicName: default_langcode
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   metatag:
     fieldName: metatag
     publicName: metatag
     enhancer:
-      id: ''
+      id: ""
     disabled: false

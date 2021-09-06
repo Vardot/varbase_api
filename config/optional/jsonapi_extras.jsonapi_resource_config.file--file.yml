@@ -16,65 +16,65 @@ resourceFields:
     fieldName: fid
     publicName: fid
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   uuid:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   langcode:
     fieldName: langcode
     publicName: langcode
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   uid:
     fieldName: uid
     publicName: uid
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   filename:
     fieldName: filename
     publicName: filename
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   uri:
     fieldName: uri
     publicName: uri
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   filemime:
     fieldName: filemime
     publicName: filemime
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   filesize:
     fieldName: filesize
     publicName: filesize
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   status:
     fieldName: status
     publicName: status
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   created:
     fieldName: created
     publicName: created
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   changed:
     fieldName: changed
     publicName: changed
     enhancer:
-      id: ''
+      id: ""
     disabled: false

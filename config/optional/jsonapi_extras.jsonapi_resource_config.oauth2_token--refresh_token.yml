@@ -17,71 +17,71 @@ resourceFields:
     fieldName: id
     publicName: id
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   uuid:
     fieldName: uuid
     publicName: uuid
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   bundle:
     fieldName: bundle
     publicName: bundle
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   auth_user_id:
     fieldName: auth_user_id
     publicName: auth_user_id
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   client:
     fieldName: client
     publicName: client
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   scopes:
     fieldName: scopes
     publicName: scopes
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   value:
     fieldName: value
     publicName: value
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   created:
     fieldName: created
     publicName: created
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   changed:
     fieldName: changed
     publicName: changed
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   expire:
     fieldName: expire
     publicName: expire
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   status:
     fieldName: status
     publicName: status
     enhancer:
-      id: ''
+      id: ""
     disabled: false
   metatag:
     fieldName: metatag
     publicName: metatag
     enhancer:
-      id: ''
+      id: ""
     disabled: false
