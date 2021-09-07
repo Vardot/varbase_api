@@ -14,11 +14,13 @@ build:
           - composer require --dev phpspec/prophecy-phpunit:*
           - composer require phpunit/phpunit:~9.0 --with-all-dependencies
           - composer config --json extra.installer-types '["npm-asset", "bower-asset"]'
-          - composer config --json extra.installer-paths.web\/libraries\/swagger-ui\/dist '["npm-asset/swagger-ui-dist"]'
-          - composer config --unset extra.installer-paths.web\/libraries\/\{\$name\}
-          - composer config --json extra.installer-paths.web\/libraries\/\{\$name\} '["type:drupal-library", "type:bower-asset", "type:npm-asset"]'
+          - composer config --json extra.installer-paths.libraries\/swagger-ui\/dist '["npm-asset/swagger-ui-dist"]'
+          - composer config --unset extra.installer-paths.libraries\/\{\$name\}
+          - composer config --json extra.installer-paths.libraries\/\{\$name\} '["type:drupal-library", "type:bower-asset", "type:npm-asset"]'
           - rm composer.lock
           - composer require npm-asset/swagger-ui-dist:~3.0
+          - cat composer.json
+          - find ${SOURCE_DIR}/libraries | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"
       phplint: {  }
       csslint:
         halt-on-fail: false
@@ -32,11 +34,6 @@ build:
       phpstan:
         halt-on-fail: false
     testing:
-      container_command:
-        commands:
-          - cd ${SOURCE_DIR}
-          - rm composer.lock
-          - composer install -vvv
       run_tests.javascript:
         types: 'PHPUnit-FunctionalJavascript'
         testgroups: "varbase_api"
