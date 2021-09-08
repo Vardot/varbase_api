@@ -16,9 +16,10 @@ use Drupal\jsonapi_extras\Entity\JsonapiResourceConfig;
  * Implements hook_entity_insert().
  */
 function varbase_api_entity_insert(EntityInterface $entity) {
-  $allowed = Drupal::config('varbase_api.settings')->get('entity_json');
+  $entity_json_opration = Drupal::config('varbase_api.settings')->get('entity_json');
+  $entity_type_bundle = $entity->getEntityType()->getBundleOf();
 
-  if ($entity->getEntityType()->getBundleOf() && $allowed) {
+  if ($entity_type_bundle && $entity_json_opration) {
     Drupal::service('router.builder')->rebuild();
     Drupal::service('router.route_provider')->reset();
   }
@@ -45,79 +46,83 @@ function varbase_api_view_presave(ViewEntityInterface $view) {
 }
 
 /**
- * Determines the URL of the JSON API representation of an entity.
- *
- * @param \Drupal\Core\Entity\EntityInterface $entity
- *   The entity.
- *
- * @return \Drupal\Core\Url
- *   The URL to the JSON API representation of the entity.
+ * Implements hook_entity_operation().
  */
-function varbase_api_entity_json(EntityInterface $entity) {
-  $allowed = \Drupal::config('varbase_api.settings')->get('entity_json');
+function varbase_api_entity_operation(EntityInterface $entity) {
+  $operations = [];
+
+  if (\Drupal::currentUser()->hasPermission('access view json entity operation')
+    && \Drupal::config('varbase_api.settings')->get('entity_json')
+    && varbase_api_is_jsonapi_resource_config_enabled($entity)) {
+
+    $view_json_operation_url = varbase_api_get_view_json_operation_url($entity);
+    if (isset($view_json_operation_url) && $view_json_operation_url !== '') {
+      $operations['view-json'] = [
+        'title' => t('View JSON'),
+        'url' => $view_json_operation_url,
+        'weight' => 90,
+        'query' => ['destination' => []],
+      ];
+    }
+  }
+
+  return $operations;
+}
+
+/**
+ * Check if the JSON:API resource config was enabled for this entity.
+ */
+function varbase_api_is_jsonapi_resource_config_enabled(EntityInterface $entity) {
+  // Get the JSON:API resource type.
+  $resource_config_id = sprintf('%s--%s', $entity->getEntityTypeId(), $entity->bundle());
+  $resource_type_existing_entity = \Drupal::service('jsonapi.resource_type.repository')->getByTypeName($resource_config_id);
+
+  if (isset($resource_type_existing_entity)) {
+    $jsonapi_resource_config_disabled = \Drupal::configFactory()->get('jsonapi_extras.jsonapi_resource_config.' . $resource_config_id)->get('disabled');
+    if (!$jsonapi_resource_config_disabled) {
+      return TRUE;
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Get the View JSON:API operation URL for this entity.
+ */
+function varbase_api_get_view_json_operation_url(EntityInterface $entity) {
+  $view_json_operation_url = '';
 
   $uuid = $entity->uuid();
+  $entity_type_id = $entity->getEntityTypeId();
+  $bundle = $entity->bundle();
 
   /** @var \Drupal\jsonapi\ResourceType\ResourceType $resource_type */
   $resource_type = \Drupal::service('jsonapi.resource_type.repository')
     ->get(
-      $entity->getEntityTypeId(),
-      $entity->bundle()
+      $entity_type_id,
+      ($bundle) ? $bundle : ''
     );
 
-  if ($allowed && $uuid && $resource_type) {
-    $route_name = 'jsonapi.' . $resource_type->getTypeName() . '.individual';
+  if ($uuid && $resource_type) {
 
     // JSON API routes are built dynamically per entity bundle. If for whatever
     // reason the appropriate route does not exist yet, fail silently.
     // @see varbase_api_entity_insert().
     try {
+      $route_name = 'jsonapi.' . $resource_type->getTypeName() . '.individual';
       Drupal::service('router.route_provider')->getRouteByName($route_name);
-
-      return Url::fromRoute($route_name, ['entity' => $uuid]);
+      $route_parameters = [
+        'entity' => $uuid,
+      ];
+      $view_json_operation_url = Url::fromRoute($route_name, $route_parameters);
     }
     catch (RouteNotFoundException $e) {
       // No worries. The route will probably be built soon, most likely during
       // the next general cache rebuild.
     }
   }
-}
 
-/**
- * Implements hook_entity_operation().
- */
-function varbase_api_entity_operation(EntityInterface $entity) {
-  $operations = [];
-
-  $url = varbase_api_entity_json($entity);
-  if ($url) {
-    $operations['view-json'] = [
-      'title' => t('View JSON'),
-      'url' => $url,
-      'weight' => 50,
-    ];
-  }
-
-  $bundle_of = $entity->getEntityType()->getBundleOf();
-  if ($bundle_of && \Drupal::config('varbase_api.settings')->get('bundle_docs')) {
-    $fragment = str_replace(' ', '-', sprintf(
-      'tag/%s-%s',
-      \Drupal::entityTypeManager()->getDefinition($bundle_of)->getLabel(),
-      $entity->label()
-    ));
-
-    $route_parameters = [
-      'openapi_ui' => 'redoc',
-      'openapi_generator' => 'jsonapi',
-    ];
-    $operations['api-documentation'] = [
-      'title' => t('View API documentation'),
-      'url' => Url::fromRoute('openapi.documentation', $route_parameters, ['fragment' => $fragment]),
-      'weight' => 51,
-    ];
-  }
-
-  return $operations;
+  return $view_json_operation_url;
 }
 
 /**
