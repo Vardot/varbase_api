@@ -66,6 +66,22 @@ function varbase_api_entity_operation(EntityInterface $entity) {
     }
   }
 
+  if (\Drupal::currentUser()->hasPermission('access view api docs entity operation')
+    && \Drupal::currentUser()->hasPermission('access openapi api docs')
+    && \Drupal::config('varbase_api.settings')->get('bundle_docs')
+    && varbase_api_is_jsonapi_resource_config_enabled($entity)) {
+
+    $view_api_docs_operation_url = varbase_api_get_view_api_docs_operation_url($entity);
+    if (isset($view_api_docs_operation_url) && $view_api_docs_operation_url !== '') {
+      $operations['api-documentation'] = [
+        'title' => t('View API Docs'),
+        'url' => $view_api_docs_operation_url,
+        'weight' => 95,
+        'query' => ['destination' => []],
+      ];
+    }
+  }
+
   return $operations;
 }
 
@@ -123,6 +139,43 @@ function varbase_api_get_view_json_operation_url(EntityInterface $entity) {
   }
 
   return $view_json_operation_url;
+}
+
+/**
+ * Get the View API Docs operation URL for this entity.
+ */
+function varbase_api_get_view_api_docs_operation_url(EntityInterface $entity) {
+  $view_api_docs_operation_url = '';
+
+  $entity_type_id = $entity->getEntityTypeId();
+  $bundle = $entity->bundle();
+  $entity_type_label = \Drupal::entityTypeManager()->getDefinition($entity_type_id)->getLabel();
+  $bundle_type_id = $entity->getEntityType()->getBundleEntityType();
+
+  $fragment = '';
+  if (empty($bundle_type_id)) {
+    $fragment = str_replace(' ', '-', sprintf('tag/%s', $entity_type_label));
+  }
+  else {
+    $bundle_type_label = \Drupal::entityTypeManager()->getStorage($bundle_type_id)->load($bundle)->label();
+    $fragment = str_replace(' ', '-', sprintf('tag/%s-%s', $entity_type_label, $bundle_type_label));
+  }
+
+  $route_parameters = [
+    'openapi_ui' => 'redoc',
+    // 'openapi_ui' => 'swagger',
+    'openapi_generator' => 'jsonapi',
+  ];
+
+  try {
+    $view_api_docs_operation_url = Url::fromRoute('openapi.documentation', $route_parameters, ['fragment' => $fragment]);
+  }
+  catch (RouteNotFoundException $e) {
+    // No worries. The route will probably be built soon, most likely during
+    // the next general cache rebuild.
+  }
+
+  return $view_api_docs_operation_url;
 }
 
 /**

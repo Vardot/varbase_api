@@ -4,3 +4,6 @@ administer varbase api settings:
 access view json entity operation:
   title: 'Access View JSON entity operation'
   description: 'Access the View JSON entity operation'
+access view api docs entity operation:
+  title: 'Access View API Docs entity operation'
+  description: 'Access the View API Documentation entity operation'
