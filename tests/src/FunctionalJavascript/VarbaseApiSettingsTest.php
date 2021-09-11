@@ -42,40 +42,45 @@ class VarbaseApiSettingsTest extends WebDriverTestBase {
    */
   protected function setUp(): void {
     parent::setUp();
+
+    // Insall the Claro admin theme.
     $this->container->get('theme_installer')->install(['claro']);
+
+    // Set the Claro theme as the default admin theme.
     $this->config('system.theme')->set('admin', 'claro')->save();
 
-    $this->drupalLogin($this->rootUser);
   }
 
   /**
    * Check Varbase API Settings.
    */
   public function testCheckVarbaseApiSettings() {
-    $assert_session = $this->assertSession();
+
+    // Given that the root super user was logged in to the site.
+    $this->drupalLogin($this->rootUser);
 
     // Varbase API settings.
-    $this->drupalGet('/admin/config/system/varbase/api');
+    $this->drupalGet('admin/config/system/varbase/api');
 
     $page = $this->getSession()->getPage();
 
     $varbase_api_settings_text = $this->t('Varbase API settings');
-    $assert_session->pageTextContains($varbase_api_settings_text);
+    $this->assertSession()->pageTextContains($varbase_api_settings_text);
 
     $expose_view_json_text = $this->t('Expose a "View JSON" link in entity operations');
-    $assert_session->pageTextContains($expose_view_json_text);
+    $this->assertSession()->pageTextContains($expose_view_json_text);
     $entity_json = $page->findField('entity_json');
     $this->assertNotEmpty($entity_json);
     $this->assertTrue($entity_json->isChecked());
 
     $expose_view_api_doc_text = $this->t('Expose a "View API Documentation" link in bundle entity operations');
-    $assert_session->pageTextContains($expose_view_api_doc_text);
+    $this->assertSession()->pageTextContains($expose_view_api_doc_text);
     $bundle_docs = $page->findField('bundle_docs');
     $this->assertNotEmpty($bundle_docs);
     $this->assertTrue($bundle_docs->isChecked());
 
     $auto_enable = $this->t('Auto Enabled JSON:API Endpoints for Entity Types');
-    $assert_session->pageTextContains($auto_enable);
+    $this->assertSession()->pageTextContains($auto_enable);
 
   }
 
@@ -83,16 +88,18 @@ class VarbaseApiSettingsTest extends WebDriverTestBase {
    * Check Varbase API Generate keys.
    */
   public function testCheckVarbaseApiGenerateKeys() {
-    $assert_session = $this->assertSession();
+
+    // Given that the root super user was logged in to the site.
+    $this->drupalLogin($this->rootUser);
 
     // Generate keys.
-    $this->drupalGet('/admin/config/system/varbase/api/keys');
+    $this->drupalGet('admin/config/system/varbase/api/keys');
 
     $generate_keys_text = $this->t('Generate keys');
-    $assert_session->pageTextContains($generate_keys_text);
+    $this->assertSession()->pageTextContains($generate_keys_text);
 
     $destination_text = $this->t('Destination');
-    $assert_session->pageTextContains($destination_text);
+    $this->assertSession()->pageTextContains($destination_text);
 
   }
 
@@ -101,7 +108,10 @@ class VarbaseApiSettingsTest extends WebDriverTestBase {
    */
   public function testCheckVarbaseApiAutoEnabledJsonApiEndpoints() {
 
-    $this->drupalGet('/admin/config/system/varbase/api');
+    // Given that the root super user was logged in to the site.
+    $this->drupalLogin($this->rootUser);
+
+    $this->drupalGet('admin/config/system/varbase/api');
 
     $page = $this->getSession()->getPage();
 
