@@ -11,7 +11,7 @@ use Drupal\Core\Config\StorageInterface;
 use Drupal\Core\Config\FileStorage;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Url;
-use Drupal\varbase\Entity\VarbaseEntityDefinitionUpdateManager;
+use Vardot\Entity\EntityDefinitionUpdateManager;
 
 /**
  * Implements hook_install().
@@ -117,7 +117,7 @@ function varbase_api_update_8701() {
     // Entity updates to clear up any mismatched entity and/or field definitions
     // And Fix changes were detected in the entity type and field definitions.
     \Drupal::classResolver()
-      ->getInstanceFromDefinition(VarbaseEntityDefinitionUpdateManager::class)
+      ->getInstanceFromDefinition(EntityDefinitionUpdateManager::class)
       ->applyUpdates();
   }
 }
@@ -157,7 +157,7 @@ function varbase_api_update_8702() {
     // Entity updates to clear up any mismatched entity and/or field definitions
     // And Fix changes were detected in the entity type and field definitions.
     \Drupal::classResolver()
-      ->getInstanceFromDefinition(VarbaseEntityDefinitionUpdateManager::class)
+      ->getInstanceFromDefinition(EntityDefinitionUpdateManager::class)
       ->applyUpdates();
   }
 }
