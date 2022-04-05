@@ -34,6 +34,7 @@
     "cweagans/composer-patches": "~1.0",
     "drupal/core": "~9.0",
     "vardot/entity-definition-update-manager": "~1.0",
+    "vardot/module-installer-factory": "~1.0",
     "drupal/consumers": "~1.0",
     "drupal/openapi": "~2.0",
     "drupal/openapi_jsonapi": "3.0.2",
