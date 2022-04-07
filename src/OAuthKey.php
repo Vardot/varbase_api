@@ -148,7 +148,14 @@ class OAuthKey {
     }
     array_push($key_pair, $key);
 
-    openssl_pkey_free($pk);
+    if (PHP_VERSION_ID < 80000) {
+      // phpcs:disable
+      openssl_pkey_free($pk);
+      // phpcs:enable
+    }
+    else {
+      unset($pk);
+    }
 
     return $key_pair;
   }
