@@ -37,7 +37,7 @@
     "vardot/module-installer-factory": "~1.0",
     "drupal/consumers": "~1.0",
     "drupal/openapi": "~2.0",
-    "drupal/openapi_jsonapi": "3.0.2",
+    "drupal/openapi_jsonapi": "3.0.4",
     "drupal/openapi_rest": "~2.0",
     "drupal/openapi_ui_redoc": "~1.0",
     "drupal/openapi_ui_swagger": "~1.0",
