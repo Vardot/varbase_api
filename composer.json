@@ -32,9 +32,9 @@
     "composer/installers": "~2.0",
     "oomphinc/composer-installers-extender": "~2.0",
     "cweagans/composer-patches": "~1.0",
-    "drupal/core": "~9.0 || ~10.0",
-    "vardot/entity-definition-update-manager": "~1.0",
-    "vardot/module-installer-factory": "~1.0",
+    "drupal/core": "~10.0",
+    "vardot/entity-definition-update-manager": "~1.0 || 1.0.x-dev",
+    "vardot/module-installer-factory": "~1.0 || 1.0.x-dev",
     "drupal/consumers": "~1.0",
     "drupal/openapi": "~2.0",
     "drupal/openapi_jsonapi": "3.0.4",
@@ -61,9 +61,6 @@
     },
     "enable-patching": true,
     "composer-exit-on-patch-failure": true,
-    "patchLevel": {
-      "drupal/core": "-p2"
-    },
     "patches": {
       "drupal/openapi_jsonapi": {
         "Issue #3185778: Fix TypeError: Cannot read property 'anyOf' of undefined":
