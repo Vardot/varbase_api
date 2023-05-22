@@ -185,7 +185,7 @@ class OAuthKeyForm extends ConfigFormBase {
     }
 
     try {
-      list ($private_key, $public_key) = OAuthKey::generate($conf);
+      [$private_key, $public_key] = OAuthKey::generate($conf);
     }
     catch (KeyGenerationException $e) {
       return $this->onException($e, $form_state);
