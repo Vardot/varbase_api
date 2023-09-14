@@ -44,7 +44,7 @@
     "drupal/simple_oauth": "~6.0",
     "drupal/schema_metatag": "~3.0.0",
     "drupal/restui": "~1.0",
-    "drupal/jsonapi_extras": "3.23.0"
+    "drupal/jsonapi_extras": "~3.0"
   },
   "suggest": {
     "swagger-api/swagger-ui": "~3.0: Provides the Swagger UI library which is a collection of HTML, Javascript, and CSS assets that dynamically generate beautiful documentation from a Swagger-compliant API."
@@ -67,10 +67,6 @@
         "https://www.drupal.org/files/issues/2020-12-21/add_required_keyword_8.x_2.x-3185778-5.patch",
         "Issue #3079209: Hide POST, PUT, and DELETE endpoints when JSON:API is configured to be read-only":
         "https://www.drupal.org/files/issues/2020-12-21/only_add_read_route-methods_when_read_only_is_enabled_in_jsonapi_8.x_2.x-3079209-11.patch"
-      },
-      "drupal/jsonapi_extras": {
-        "Issue #3331874: Fix $request->get may no longer return array as of Symfony 6.0":
-        "https://www.drupal.org/files/issues/2023-04-17/jsonapi_extras_3331874_2.patch"
       }
     }
   }
