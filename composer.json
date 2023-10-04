@@ -40,7 +40,7 @@
     "drupal/openapi_jsonapi": "3.0.4",
     "drupal/openapi_rest": "~2.0",
     "drupal/openapi_ui_redoc": "~1.0",
-    "drupal/openapi_ui_swagger": "1.x-dev",
+    "drupal/openapi_ui_swagger": "~1.0",
     "drupal/simple_oauth": "~6.0",
     "drupal/schema_metatag": "~3.0.0",
     "drupal/restui": "~1.0",
