@@ -1,0 +1,5 @@
+id: site_admin
+permissions:
+  - 'access openapi api docs'
+  - 'access view api docs entity operation'
+  - 'access view json entity operation'

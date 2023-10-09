@@ -15,8 +15,7 @@ use Vardot\Installer\ModuleInstallerFactory;
  */
 function varbase_api_install() {
 
-  // Processor for install: in varbase_api.info.yml file using ModuleInstallerFactory.
-  // ---------------------------------------------------------------------------.
+  // Processor for install: in varbase_api.info.yml file.
   ModuleInstallerFactory::installList('varbase_api');
 
   // Install optional configs.
@@ -44,6 +43,10 @@ function varbase_api_install() {
       $path_alias->save();
     }
   }
+
+  // Add permissions.
+  ModuleInstallerFactory::addPermissions('varbase_api');
+
 }
 
 /**
