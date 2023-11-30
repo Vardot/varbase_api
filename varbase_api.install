@@ -8,8 +8,8 @@
 use Vardot\Installer\ModuleInstallerFactory;
 
 // Include all helpers and updates.
-include_once __DIR__ . '/include/helpers.inc';
-include_once __DIR__ . '/include/updates.inc';
+include_once __DIR__ . '/includes/helpers.inc';
+include_once __DIR__ . '/includes/updates.inc';
 
 /**
  * Implements hook_install().
