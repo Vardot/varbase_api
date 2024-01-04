@@ -36,7 +36,7 @@
     "vardot/entity-definition-update-manager": "~1.0",
     "vardot/module-installer-factory": "~1.0",
     "drupal/consumers": "~1.0",
-    "drupal/openapi": "~2.0",
+    "drupal/openapi": "2.1.0",
     "drupal/openapi_jsonapi": "3.0.4",
     "drupal/openapi_rest": "~2.0",
     "drupal/openapi_ui_redoc": "~1.0",
@@ -65,6 +65,10 @@
       "drupal/core": "-p2"
     },
     "patches": {
+      "drupal/openapi": {
+        "Issue #3412276: Fix OpenAPI with PHP 8.2+ of Deprecated function: Creation of dynamic property":
+        "https://www.drupal.org/files/issues/2024-01-04/openapi--3362322-9--2023-05-26--mr10--bd284519.patch"
+      },
       "drupal/openapi_jsonapi": {
         "Issue #3185778: Fix TypeError: Cannot read property 'anyOf' of undefined":
         "https://www.drupal.org/files/issues/2020-12-21/add_required_keyword_8.x_2.x-3185778-5.patch",
