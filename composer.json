@@ -29,22 +29,22 @@
     }
   },
   "require": {
-    "composer/installers": "~2.0",
-    "oomphinc/composer-installers-extender": "~2.0",
-    "cweagans/composer-patches": "~1.0",
+    "composer/installers": "~2",
+    "oomphinc/composer-installers-extender": "~2",
+    "cweagans/composer-patches": "~1 || ~2",
     "drupal/core": "~10",
-    "vardot/entity-definition-update-manager": "~1.0",
-    "vardot/module-installer-factory": "~1.0",
-    "drupal/consumers": "~1.0",
+    "vardot/entity-definition-update-manager": "~1",
+    "vardot/module-installer-factory": "~1",
+    "drupal/consumers": "~1",
     "drupal/openapi": "2.1.0",
     "drupal/openapi_jsonapi": "3.0.4",
-    "drupal/openapi_rest": "~2.0",
-    "drupal/openapi_ui_redoc": "~1.0",
-    "drupal/openapi_ui_swagger": "~1.0",
+    "drupal/openapi_rest": "~2",
+    "drupal/openapi_ui_redoc": "~1",
+    "drupal/openapi_ui_swagger": "~1",
     "drupal/simple_oauth": "~5.0",
     "drupal/schema_metatag": "~2.0 || ~3.0.0",
-    "drupal/restui": "~1.0",
-    "drupal/jsonapi_extras": "~3.0"
+    "drupal/restui": "~1",
+    "drupal/jsonapi_extras": "~3"
   },
   "suggest": {
     "swagger-api/swagger-ui": "~3.0: Provides the Swagger UI library which is a collection of HTML, Javascript, and CSS assets that dynamically generate beautiful documentation from a Swagger-compliant API."
