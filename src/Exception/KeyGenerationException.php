@@ -20,7 +20,7 @@ class KeyGenerationException extends \RuntimeException {
    * @param \Exception $previous
    *   Previous exception.
    */
-  public function __construct($message = "", $code = 0, \Exception $previous = NULL) {
+  public function __construct($message = "", $code = 0, ?\Exception $previous = NULL) {
     if (empty($message)) {
       $message = openssl_error_string() ?: 'An internal error occurred';
     }
