@@ -60,7 +60,7 @@ class OAuthKey {
    * @return bool
    *   TRUE if the key component(s) exist, FALSE otherwise.
    */
-  public function exists($which = NULL) {
+  public function exists(?string $which = NULL) {
     if ($which) {
       $key = $this->configFactory
         ->get('simple_oauth.settings')
