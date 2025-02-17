@@ -32,7 +32,7 @@
     "drupal/consumers": "~1",
     "drupal/openapi": "~2",
     "drupal/openapi_jsonapi": "~3",
-    "vardot/openapi_rest": "~2.1.0",
+    "vardot/openapi_rest": "~2",
     "drupal/openapi_ui_redoc": "~1",
     "drupal/openapi_ui_swagger": "~1",
     "drupal/simple_oauth": "~6",
