@@ -4,8 +4,8 @@ type: install
 install:
   - jsonapi
   - openapi
-  - openapi_rest
   - openapi_jsonapi
+  - openapi_rest
   - openapi_ui_redoc
   - openapi_ui_swagger
   - simple_oauth
@@ -16,8 +16,8 @@ config:
   import:
     jsonapi: '*'
     openapi: '*'
-    openapi_rest: '*'
     openapi_jsonapi: '*'
+    openapi_rest: '*'
     openapi_ui_redoc: '*'
     openapi_ui_swagger: '*'
     simple_oauth: '*'
