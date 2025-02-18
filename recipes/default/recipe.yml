@@ -1,0 +1,34 @@
+name: Varbase API - Default
+description: A recipe to manage default installed modules, configs and permissions.
+type: install
+install:
+  - jsonapi
+  - openapi
+  - openapi_rest
+  - openapi_jsonapi
+  - openapi_ui_redoc
+  - openapi_ui_swagger
+  - simple_oauth
+  - restui
+  - jsonapi_extras
+  - jsonapi_defaults
+config:
+  import:
+    jsonapi: '*'
+    openapi: '*'
+    openapi_rest: '*'
+    openapi_jsonapi: '*'
+    openapi_ui_redoc: '*'
+    openapi_ui_swagger: '*'
+    simple_oauth: '*'
+    restui: '*'
+    jsonapi_extras: '*'
+    jsonapi_defaults: '*'
+    varbase_api:
+      - jsonapi_extras.settings
+  actions:
+    user.role.site_admin:
+      grantPermissions:
+        - 'access openapi api docs'
+        - 'access view api docs entity operation'
+        - 'access view json entity operation'

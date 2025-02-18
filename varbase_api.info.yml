@@ -4,15 +4,3 @@ type: module
 package: Varbase
 configure: varbase_api.settings
 core_version_requirement: '>=11.1'
-dependencies:
-  - drupal:jsonapi
-  - openapi:openapi
-  - openapi_jsonapi:openapi_jsonapi
-  - openapi_ui_redoc:openapi_ui_redoc
-  - openapi_ui_swagger:openapi_ui_swagger
-  - simple_oauth:simple_oauth
-install:
-  - openapi_rest
-  - restui
-  - jsonapi_extras
-  - jsonapi_defaults
