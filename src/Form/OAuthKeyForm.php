@@ -36,7 +36,7 @@ class OAuthKeyForm extends ConfigFormBase {
    *   The string translation service.
    */
   public function __construct(ConfigFactoryInterface $config_factory, OAuthKey $key, TranslationInterface $translation) {
-    parent::__construct($config_factory);
+    parent::__construct($config_factory, \Drupal::service('config.typed'));
     $this->key = $key;
     $this->setStringTranslation($translation);
   }
