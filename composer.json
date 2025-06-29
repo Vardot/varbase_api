@@ -3,10 +3,7 @@
   "description": "A JSON:API implementation with authentication and authorization that allows for easy ingestion of content by other applications.",
   "type": "drupal-module",
   "homepage": "https://www.drupal.org/project/varbase_editor",
-  "notification-url": "https://packages.drupal.org/8/downloads",
   "license": "GPL-2.0-or-later",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "authors": [
     {
       "name": "Vardot",
@@ -17,12 +14,6 @@
   "support": {
     "issues": "https://www.drupal.org/project/issues/varbase_api",
     "source": "http://cgit.drupalcode.org/varbase_api"
-  },
-  "repositories": {
-    "drupal": {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
-    }
   },
   "require": {
     "drupal/core": "~10.5.0 || ~11.2.0",
