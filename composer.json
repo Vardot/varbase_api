@@ -24,7 +24,7 @@
     "drupal/openapi_rest": "~2",
     "drupal/openapi_ui_redoc": "~1",
     "drupal/openapi_ui_swagger": "~1",
-    "drupal/simple_oauth": "~6",
+    "drupal/simple_oauth": "~5 || ~6",
     "drupal/schema_metatag": "~2.0 || ~3.0.0",
     "drupal/restui": "~1",
     "drupal/jsonapi_extras": "~3"
