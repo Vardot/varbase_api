@@ -113,8 +113,8 @@ class VarbaseApiSettingsForm extends ConfigFormBase implements ContainerInjectio
       && is_countable($auto_enabled_entity_types)
       && count($auto_enabled_entity_types) > 0) {
 
-      foreach ($auto_enabled_entity_types as $entity_type_id => $entity_type_vlaue) {
-        if ($entity_type_vlaue !== 0) {
+      foreach ($auto_enabled_entity_types as $entity_type_id => $entity_type_value) {
+        if ($entity_type_value !== 0) {
           $auto_enabled_entity_types_ids[$entity_type_id] = $entity_type_id;
         }
       }
