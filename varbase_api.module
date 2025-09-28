@@ -16,10 +16,10 @@ use Drupal\jsonapi_extras\Entity\JsonapiResourceConfig;
  * Implements hook_entity_insert().
  */
 function varbase_api_entity_insert(EntityInterface $entity) {
-  $entity_json_opration = Drupal::config('varbase_api.settings')->get('entity_json');
+  $entity_json_operation = Drupal::config('varbase_api.settings')->get('entity_json');
   $entity_type_bundle = $entity->getEntityType()->getBundleOf();
 
-  if ($entity_type_bundle && $entity_json_opration) {
+  if ($entity_type_bundle && $entity_json_operation) {
     Drupal::service('router.builder')->rebuild();
     Drupal::service('router.route_provider')->reset();
   }
