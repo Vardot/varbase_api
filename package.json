@@ -1,11 +1,11 @@
 {
   "name": "varbase_api",
-  "private": true,
   "description": "A JSON:API implementation with authentication and authorization that allows for easy ingestion of content by other applications.",
-  "license": "GPL-2.0",
+  "license": "GPL-2.0-or-later",
+  "private": true,
   "engines": {
-    "yarn": ">= 1.6",
-    "node": ">= 18.0"
+    "yarn": ">= 4.9.3",
+    "node": ">= 20.0"
   },
   "keywords": [
     "Drupal",
@@ -44,5 +44,6 @@
     "last 1 ChromeAndroid version",
     "last 1 Samsung version",
     "Firefox ESR"
-  ]
+  ],
+  "packageManager": "yarn@4.9.3"
 }
