@@ -20,7 +20,6 @@ function varbase_api_install() {
   ModuleInstallerFactory::installList('varbase_api');
 
   // Install optional configs.
-  ModuleInstallerFactory::importConfigsFromScanedDirectory('varbase_api', '/^field.storage.*\\.(yml)$/i');
   ModuleInstallerFactory::importConfigsFromScanedDirectory('varbase_api', '/^.*(settings.yml)$/i');
 
   // Give the API documentation page a nice path alias.
