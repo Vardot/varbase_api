@@ -24,9 +24,13 @@ config:
     restui: '*'
     jsonapi_extras: '*'
     jsonapi_defaults: '*'
-    varbase_api:
-      - jsonapi_extras.settings
   actions:
+    jsonapi_extras.settings:
+      simpleConfigUpdate:
+        path_prefix: api
+        include_count: false
+        default_disabled: true
+        validate_configuration_integrity: true
     user.role.site_admin:
       grantPermissions:
         - 'access openapi api docs'
