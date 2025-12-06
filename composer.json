@@ -17,8 +17,8 @@
     "source": "http://cgit.drupalcode.org/varbase_api"
   },
   "require": {
-    "drupal/core": "~10.5.0 || ~11.2.0",
-    "vardot/varbase-patches": "~10",
+    "drupal/core": "~10.6.0 || ~11.3.0",
+    "vardot/varbase-patches": "~10.0.0",
     "drupal/consumers": "~1",
     "drupal/openapi": "~2",
     "drupal/openapi_jsonapi": "~3",
