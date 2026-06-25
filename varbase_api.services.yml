@@ -13,3 +13,14 @@ services:
       ]
     tags:
       - { name: event_subscriber }
+  Drupal\varbase_api\Hook\VarbaseApiHooks:
+    class: Drupal\varbase_api\Hook\VarbaseApiHooks
+    arguments:
+      - '@config.factory'
+      - '@router.builder'
+      - '@router.route_provider'
+      - '@config.installer'
+      - '@current_user'
+      - '@jsonapi.resource_type.repository'
+      - '@entity_type.manager'
+      - '@logger.factory'

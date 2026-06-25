@@ -1,32 +1,34 @@
 {
-  "name": "drupal/varbase_api",
-  "description": "A JSON:API implementation with authentication and authorization that allows for easy ingestion of content by other applications.",
-  "type": "drupal-module",
-  "homepage": "https://www.drupal.org/project/varbase_editor",
-  "license": "GPL-2.0-or-later",
-  "authors": [
-    {
-      "name": "Vardot",
-      "homepage": "https://www.drupal.org/vardot",
-      "role": "Maintainer"
+    "name": "drupal/varbase_api",
+    "description": "A JSON:API implementation with authentication and authorization that allows for easy ingestion of content by other applications.",
+    "type": "drupal-module",
+    "homepage": "https://www.drupal.org/project/varbase_editor",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Vardot",
+            "homepage": "https://www.drupal.org/vardot",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/varbase_api",
+        "source": "http://cgit.drupalcode.org/varbase_api"
+    },
+    "require": {
+        "drupal/core": "~11.3.0",
+        "vardot/entity-definition-update-manager": "~1",
+        "vardot/module-installer-factory": "~1",
+        "vardot/varbase-patches": "~9",
+        "drupal/consumers": "~1",
+        "drupal/openapi": "~2",
+        "drupal/openapi_jsonapi": "~3",
+        "drupal/openapi_rest": "~2",
+        "drupal/openapi_ui_redoc": "~1",
+        "drupal/openapi_ui_swagger": "~1",
+        "drupal/simple_oauth": "~6",
+        "drupal/schema_metatag": "~3.0",
+        "drupal/restui": "~1",
+        "drupal/jsonapi_extras": "~3"
     }
-  ],
-  "support": {
-    "issues": "https://www.drupal.org/project/issues/varbase_api",
-    "source": "http://cgit.drupalcode.org/varbase_api"
-  },
-  "require": {
-    "drupal/core": "~10.6.0 || ~11.3.0",
-    "vardot/varbase-patches": "~9",
-    "drupal/consumers": "~1",
-    "drupal/openapi": "~2",
-    "drupal/openapi_jsonapi": "~3",
-    "drupal/openapi_rest": "~2",
-    "drupal/openapi_ui_redoc": "~1",
-    "drupal/openapi_ui_swagger": "~1",
-    "drupal/simple_oauth": "~5 || ~6",
-    "drupal/schema_metatag": "~2.0 || ~3.0.0",
-    "drupal/restui": "~1",
-    "drupal/jsonapi_extras": "~3"
-  }
 }

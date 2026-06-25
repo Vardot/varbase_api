@@ -82,8 +82,7 @@ class VarbaseApiSettingsForm extends ConfigFormBase implements ContainerInjectio
 
     $entityDefinitions = $this->entityTypeManager->getDefinitions();
 
-    if (isset($entityDefinitions)
-      && is_countable($entityDefinitions)
+    if (is_countable($entityDefinitions)
       && count($entityDefinitions)) {
 
       $entityTypesList = [];
@@ -109,8 +108,7 @@ class VarbaseApiSettingsForm extends ConfigFormBase implements ContainerInjectio
 
     $auto_enabled_entity_types_ids = [];
     $auto_enabled_entity_types = (array) $form_state->getValue('auto_enabled_entity_types');
-    if (isset($auto_enabled_entity_types)
-      && is_countable($auto_enabled_entity_types)
+    if (is_countable($auto_enabled_entity_types)
       && count($auto_enabled_entity_types) > 0) {
 
       foreach ($auto_enabled_entity_types as $entity_type_id => $entity_type_value) {

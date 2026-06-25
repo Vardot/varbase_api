@@ -3,6 +3,7 @@
 namespace Drupal\varbase_api\Form;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Config\TypedConfigManagerInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\TranslationInterface;
@@ -30,13 +31,15 @@ class OAuthKeyForm extends ConfigFormBase {
    *
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory service.
+   * @param \Drupal\Core\Config\TypedConfigManagerInterface $typed_config_manager
+   *   The typed config manager service.
    * @param \Drupal\varbase_api\OAuthKey $key
    *   The OAuth keys service.
    * @param \Drupal\Core\StringTranslation\TranslationInterface $translation
    *   The string translation service.
    */
-  public function __construct(ConfigFactoryInterface $config_factory, OAuthKey $key, TranslationInterface $translation) {
-    parent::__construct($config_factory);
+  public function __construct(ConfigFactoryInterface $config_factory, TypedConfigManagerInterface $typed_config_manager, OAuthKey $key, TranslationInterface $translation) {
+    parent::__construct($config_factory, $typed_config_manager);
     $this->key = $key;
     $this->setStringTranslation($translation);
   }
@@ -47,6 +50,7 @@ class OAuthKeyForm extends ConfigFormBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('config.factory'),
+      $container->get('config.typed'),
       $container->get('varbase_api.oauth_key'),
       $container->get('string_translation')
     );

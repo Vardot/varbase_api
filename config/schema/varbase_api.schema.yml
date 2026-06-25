@@ -12,5 +12,5 @@ varbase_api.settings:
       type: sequence
       label: "Auto Enabled JSON:API Endpoints for Entity Types"
       sequence:
-        - type: string
-          label: "Entity type machine name"
+        type: string
+        label: "Entity type machine name"
