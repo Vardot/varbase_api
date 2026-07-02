@@ -1,9 +1,10 @@
 name: 'Varbase API Test'
-description: 'Provisions a site for the Varbase API automated tests: enables Varbase API (which pulls in JSON:API, OpenAPI and Simple OAuth and relocates the JSON:API base path to /api) and grants the administration permission to the Content editor role.'
+description: 'Provisions a site for the Varbase API automated tests: enables Varbase API (which pulls in JSON:API, OpenAPI and Simple OAuth and relocates the JSON:API base path to /api), grants the administration permission to the Content editor role, and ships an Article content type with a sample node so the entity-operation scenarios have real content on /admin/content (the Drupal 11 Standard profile no longer ships Article/Page).'
 type: 'Testing'
 install:
   - varbase_api
 config:
+  strict: false
   actions:
     user.role.content_editor:
       grantPermissions:

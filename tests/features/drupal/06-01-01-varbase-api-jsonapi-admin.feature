@@ -58,7 +58,8 @@ Feature: Varbase API - JSON:API admin interface and services
     And I should not see "Page not found"
 
   Scenario: Varbase API adds the "View API Docs" operation to content
-    Given I create an article titled "API Docs Article"
+    # The "API Docs Article" node is provisioned by the varbase_api_test recipe
+    # (Drupal 11 Standard no longer ships an Article content type).
     When I am on "/admin/content"
     Then I should see "Content"
     And I should see "API Docs Article"

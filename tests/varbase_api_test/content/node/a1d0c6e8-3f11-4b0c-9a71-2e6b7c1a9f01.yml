@@ -1,0 +1,21 @@
+_meta:
+  version: "1.0"
+  entity_type: node
+  uuid: a1d0c6e8-3f11-4b0c-9a71-2e6b7c1a9f01
+  bundle: article
+  default_langcode: en
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: 'API Docs Article'
+  created:
+    - value: 1700000000
+  promote:
+    - value: true
+  sticky:
+    - value: false

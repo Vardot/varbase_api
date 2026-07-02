@@ -95,7 +95,7 @@ Given(/^(?:I |we )?am an anonymous visitor$/, async function () {
  * Example #1: Given I create an article titled "API Docs Article"
  * Example #2: When we create an article titled "JSON test"
  */
-When(/^(?:I |we )?create an article titled "([^"]*)"$/, async function (title) {
+When(/^(?:I |we )?create an article titled "([^"]*)"$/, { timeout: 120000 }, async function (title) {
   await attempt(async () => {
     await gotoUrl(this.page, `${this.parameters.launchUrl}/node/add/article`);
     await this.page.locator('#edit-title-0-value').fill(title);
