@@ -11,7 +11,6 @@ install:
   - simple_oauth
   - restui
   - jsonapi_extras
-  - jsonapi_defaults
 config:
   import:
     jsonapi: '*'
@@ -23,7 +22,6 @@ config:
     simple_oauth: '*'
     restui: '*'
     jsonapi_extras: '*'
-    jsonapi_defaults: '*'
   actions:
     jsonapi_extras.settings:
       simpleConfigUpdate:

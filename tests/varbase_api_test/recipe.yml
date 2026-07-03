@@ -1,0 +1,5 @@
+name: 'Varbase API Test'
+description: 'Provisions a site for the Varbase API automated browser tests: enables Varbase API, whose install hook applies the module default recipe (JSON:API, JSON:API Extras, OpenAPI, Simple OAuth, RESTUI and Consumers) and relocates the JSON:API base path from /jsonapi to /api. The Webmaster super-admin created by drush site:install reaches every settings route, so no extra role/permission provisioning is needed here.'
+type: 'Testing'
+install:
+  - varbase_api
