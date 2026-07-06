@@ -5,7 +5,8 @@
  * Contains varbase_api.install.
  */
 
-use Vardot\Installer\ModuleInstallerFactory;
+use Drupal\Core\Recipe\Recipe;
+use Drupal\Core\Recipe\RecipeRunner;
 
 // Include all helpers and updates.
 include_once __DIR__ . '/includes/helpers.inc';
@@ -16,16 +17,10 @@ include_once __DIR__ . '/includes/updates.inc';
  */
 function varbase_api_install() {
 
-  // Processor for install: in varbase_api.info.yml file.
-  ModuleInstallerFactory::installList('varbase_api');
-
-  // Install optional configs.
-  ModuleInstallerFactory::importConfigsFromScanedDirectory('varbase_api', '/^.*(settings.yml)$/i');
+  $default_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/default');
+  RecipeRunner::processRecipe($default_recipe);
 
   // Give the API documentation page a nice path alias.
   varbase_api__add_api_path_alias();
-
-  // Add permissions.
-  ModuleInstallerFactory::addPermissions('varbase_api');
 
 }
