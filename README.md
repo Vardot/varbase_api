@@ -1,3 +1,7 @@
+[![pipeline status](https://git.drupalcode.org/project/varbase_api/badges/9.2.x/pipeline.svg)](https://git.drupalcode.org/project/varbase_api/-/pipelines)
+[![Varbase API](https://img.shields.io/badge/Varbase%20API-9.2.0-0d6efc?labelColor=001d38&style=flat-square)](https://git.drupalcode.org/project/varbase_api/-/pipelines?ref=9.2.0)
+[![Automated Functional Testing](https://git.drupalcode.org/project/varbase_api/badges/9.2.x/pipeline.svg)](https://git.drupalcode.org/project/varbase_api/-/pipelines)
+
 # Varbase API
 
 A JSON:API implementation with authentication and authorization that allows
