@@ -9,6 +9,7 @@ use Drupal\Core\Config\ConfigInstallerInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Hook\Attribute\Hook;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Routing\RouteBuilderInterface;
@@ -102,7 +103,11 @@ class VarbaseApiHooks {
    * Implements hook_entity_operation().
    */
   #[Hook('entity_operation')]
-  public function entityOperation(EntityInterface $entity): array {
+  public function entityOperation(EntityInterface $entity, ?CacheableMetadata $cacheable_metadata = NULL): array {
+    if ($cacheable_metadata) {
+      $cacheable_metadata->addCacheContexts(['user.permissions']);
+      $cacheable_metadata->addCacheableDependency($this->configFactory->get('varbase_api.settings'));
+    }
     $operations = [];
 
     if ($this->currentUser->hasPermission('access view json entity operation')
