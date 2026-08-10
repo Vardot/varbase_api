@@ -17,7 +17,7 @@ use Drupal\varbase_api\Hook\VarbaseApiHooks;
 /**
  * Unit tests for the Varbase API object-oriented hooks.
  *
- * Functional and browser coverage lives in the webship-js suite
+ * Functional and browser coverage lives in the varbase-e2e suite
  * (tests/features/drupal). These PHP tests only exercise unit-testable logic.
  *
  * @coversDefaultClass \Drupal\varbase_api\Hook\VarbaseApiHooks
